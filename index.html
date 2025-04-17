@@ -1,101 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kethan Dosapati | AI Engineer</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-<!-- Navbar -->
+<!-- Navigation -->
 <nav class="navbar">
-  <div class="navbar-inner">
-    <div class="logo">Kethan Dosapati</div>
+  <div class="container">
+    <a href="index.html" class="logo">Kethan Dosapati</a>
+    <div class="menu-toggle" id="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Get in Touch</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
 </nav>
 
 <!-- Hero Section -->
 <section class="hero">
-  <img src="assets/profile.png" alt="Kethan Dosapati" class="avatar">
-  <h1>Kethan <span class="last-name">Dosapati</span></h1>
-  <p class="subtitle">AI Engineer | ML Developer | Builder of Smart Systems</p>
-  <a href="#contact" class="btn-primary">Contact Me</a>
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">Kethan <span>Dosapati</span></h1>
+      <p class="hero-subtitle">AI Engineer | ML Developer | Builder of Smart Systems</p>
+      <div class="hero-buttons">
+        <a href="projects.html" class="btn btn-primary">View My Work</a>
+        <a href="contact.html" class="btn btn-secondary">Contact Me</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="assets/profile.png" alt="Kethan Dosapati" class="profile-img">
+    </div>
+  </div>
 </section>
 
 <!-- About Section -->
-<section id="about" class="content-section">
-  <h2>About Me</h2>
-  <p>I’m an AI Engineer passionate about building smart, scalable systems using machine learning, generative AI, and NLP. I'm currently pursuing my MS in Data Science at Pace University.</p>
-</section>
-
-<!-- Projects Section -->
-<section id="projects" class="content-section">
-  <h2>Projects</h2>
-  <div class="projects-grid">
-    <div class="project-card">
-      <h3>TeachMate</h3>
-      <p>Smart document AI with handwriting recognition, grading, quizzes, and chat interface.</p>
-    </div>
-    <div class="project-card">
-      <h3>AI Trainer</h3>
-      <p>Real-time feedback for workout form using video analysis — 85% accuracy.</p>
-    </div>
-    <div class="project-card">
-      <h3>Film Agent @ D Studios</h3>
-      <p>Built bots to convert movie + OTT data into voiceover videos with subtitles.</p>
+<section id="about" class="section about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+      <p>I'm an AI Engineer passionate about building smart, scalable systems using machine learning, generative AI, and NLP. Currently pursuing my MS in Data Science at Pace University.</p>
+      <div class="social-links">
+        <a href="https://github.com/DKethan" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://pypi.org/user/dkethan/" target="_blank"><i class="fab fa-python"></i></a>
+        <a href="https://huggingface.co/DKethan" target="_blank"><i class="fas fa-robot"></i></a>
+        <a href="https://www.linkedin.com/in/kethan-dosapati/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://medium.com/@kethandosapati" target="_blank"><i class="fab fa-medium"></i></a>
+        <a href="https://www.instagram.com/filmicharmony/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCZjJz4iOz0rrOAl9l2_hz7Q" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://vsco.co/thekethan/gallery" target="_blank"><i class="fas fa-camera"></i></a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Experience Section -->
-<section id="experience" class="content-section">
-  <h2>Experience</h2>
-  <div class="experience-grid">
-    <div class="experience-card">
-      <h3>Datalabs Corporation</h3>
-      <p><strong>Role:</strong> Data Engineer Associate – AI</p>
-      <ul>
-        <li>Built GenAI news bot with 29s response time.</li>
-        <li>Created enterprise-level Excel → chatbot framework.</li>
-      </ul>
+<!-- Featured Projects -->
+<section id="featured-projects" class="section featured-projects">
+  <div class="container">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>TeachMate</h3>
+        <p>Smart document AI with handwriting recognition, grading, quizzes, and chat interface.</p>
+        <a href="projects.html" class="project-link">View Details →</a>
+      </div>
+      <div class="project-card">
+        <h3>AI Trainer</h3>
+        <p>Real-time feedback for workout form using video analysis — 85% accuracy.</p>
+        <a href="projects.html" class="project-link">View Details →</a>
+      </div>
     </div>
-
-    <div class="experience-card">
-      <h3>Skil.AI</h3>
-      <p><strong>Role:</strong> Machine Learning Intern</p>
-      <ul>
-        <li>Built 100% accurate address verification AI.</li>
-        <li>Developed diagnostic agents for issue categorization (+50% speed).</li>
-        <li>Helped build chatbot tools and document Q&A features.</li>
-      </ul>
+    <div class="text-center">
+      <a href="projects.html" class="btn btn-outline">View All Projects</a>
     </div>
   </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="content-section contact-section">
-  <h2>Get in Touch</h2>
-  <form action="mailto:kethandosapati@gmail.com" method="POST" enctype="text/plain">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Email</button>
-  </form>
 </section>
 
 <!-- Footer -->
-<footer>
-  <p>© 2025 Kethan Dosapati. Built with ❤️</p>
+<footer class="footer">
+  <div class="container">
+    <p>© 2025 Kethan Dosapati. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="experience.html">Experience</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="assets/script.js"></script>
 </body>
 </html>
