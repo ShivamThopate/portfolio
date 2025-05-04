@@ -567,16 +567,6 @@ section {
   border-color: var(--primary);
 }
 
-.package-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 5px;
-  height: 100%;
-  background: var(--primary);
-  transition: all 0.3s ease;
-}
 
 .package-card:hover::before {
   width: 8px;
