@@ -12,6 +12,10 @@
   --border: #2d3748;         /* Border color */
 }
 
+html {
+  scroll-padding-top: 80px; /* Prevents content from being hidden under fixed navbar */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -34,6 +38,13 @@ body {
 
 section {
   padding: 80px 0;
+}
+
+/* extra space to offset fixed navbar */
+.section.projects,
+.section.experience,
+.section.contact {
+  padding-top: 80px;
 }
 
 .section-title {
@@ -88,6 +99,8 @@ section {
   text-transform: uppercase;  /* All caps for buttons */
   letter-spacing: 1px;        /* Letter spacing for emphasis */
   font-size: 0.9rem;
+  -webkit-tap-highlight-color: transparent; /* Remove default mobile tap highlight */
+  touch-action: manipulation; /* Optimize for touch */
 }
 
 .btn-primary {
@@ -110,11 +123,11 @@ section {
   z-index: -1;
 }
 
-.btn-primary:hover {
+.btn-primary:hover, .btn-primary:active {
   transform: translateY(-2px);
 }
 
-.btn-primary:hover::before {
+.btn-primary:hover::before, .btn-primary:active::before {
   left: 0;
 }
 
@@ -124,7 +137,7 @@ section {
   border: 2px solid white;
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover, .btn-secondary:active {
   background: white;
   color: var(--dark);
   transform: translateY(-2px);
@@ -136,7 +149,7 @@ section {
   border: 2px solid var(--primary);
 }
 
-.btn-outline:hover {
+.btn-outline:hover, .btn-outline:active {
   background: var(--primary);
   color: white;
   transform: translateY(-2px);
@@ -188,6 +201,7 @@ section {
   font-weight: 500;
   transition: color 0.3s ease;
   position: relative;
+  padding: 8px 12px; /* Larger touch target for mobile */
 }
 
 .nav-links a:hover,
@@ -363,9 +377,10 @@ section {
   color: white;
   font-size: 1.5rem;
   transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent; /* Remove default mobile tap highlight */
 }
 
-.social-links a:hover {
+.social-links a:hover, .social-links a:active {
   background: var(--primary);
   transform: translateY(-5px);
 }
@@ -532,7 +547,7 @@ section {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .demo-container {
     grid-template-columns: 1fr;
   }
@@ -594,7 +609,7 @@ section {
 
 .packages-featured {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
   margin-bottom: 50px;
 }
@@ -712,7 +727,7 @@ section {
   transition: all 0.3s ease;
 }
 
-.package-link:hover {
+.package-link:hover, .package-link:active {
   color: white;
 }
 
@@ -722,7 +737,7 @@ section {
   transition: all 0.3s ease;
 }
 
-.package-link:hover::after {
+.package-link:hover::after, .package-link:active::after {
   transform: translateX(5px);
 }
 
@@ -735,7 +750,7 @@ section {
   transition: all 0.3s ease;
 }
 
-.package-link-secondary:hover {
+.package-link-secondary:hover, .package-link-secondary:active {
   color: white;
 }
 
@@ -777,7 +792,7 @@ section {
   transition: all 0.3s ease;
 }
 
-.project-link:hover {
+.project-link:hover, .project-link:active {
   color: white;
 }
 
@@ -787,7 +802,7 @@ section {
   transition: all 0.3s ease;
 }
 
-.project-link:hover::after {
+.project-link:hover::after, .project-link:active::after {
   transform: translateX(5px);
 }
 
@@ -838,15 +853,45 @@ section {
   transition: width 0.3s ease;
 }
 
-.footer-links a:hover {
+.footer-links a:hover, .footer-links a:active {
   color: white;
 }
 
-.footer-links a:hover::after {
+.footer-links a:hover::after, .footer-links a:active::after {
   width: 100%;
 }
 
 /* ===== Responsive Styles ===== */
+
+/* iOS-specific styles (iPhone) */
+@supports (-webkit-touch-callout: none) {
+  /* CSS specific to iOS devices */
+  .btn {
+    padding: 15px 28px; /* Slightly larger touch targets on iOS */
+  }
+
+  .social-links a {
+    width: 52px;
+    height: 52px;
+  }
+
+  /* Fix for 100vh issue on iOS */
+  .nav-links {
+    height: calc(100vh - 80px - env(safe-area-inset-bottom));
+  }
+
+  /* Add padding for iPhone notch */
+  .navbar {
+    padding-top: max(20px, env(safe-area-inset-top));
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Ensure content isn't hidden behind the home indicator */
+  .footer {
+    padding-bottom: max(40px, env(safe-area-inset-bottom));
+  }
+}
 @media (max-width: 992px) {
   .hero .container {
     flex-direction: column;
@@ -863,6 +908,58 @@ section {
 
   .hero-title {
     font-size: 2.8rem;
+  }
+
+  .packages-featured {
+    grid-template-columns: 1fr;
+  }
+
+  .package-card.featured {
+    padding: 30px;
+  }
+}
+
+/* Modern smartphones (iPhone 12-16 Pro, etc.) */
+@media (max-width: 844px) {
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .profile-img {
+    width: 280px;
+    height: 280px;
+  }
+
+  .social-links {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .social-links a {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  .package-features {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 20px;
   }
 }
 
@@ -917,6 +1014,23 @@ section {
   .projects-grid {
     grid-template-columns: 1fr;
   }
+
+  .package-card h3 {
+    font-size: 1.6rem;
+  }
+
+  .hero .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-image {
+    order: -1;
+    margin: 0 0 2rem;
+  }
+  .hero-image .profile-img {
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 576px) {
@@ -935,6 +1049,45 @@ section {
 
   .section {
     padding: 60px 0;
+  }
+
+  .profile-img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .social-links {
+    gap: 10px;
+  }
+
+  .social-links a {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .package-card {
+    padding: 20px;
+  }
+
+  .package-card.featured {
+    padding: 25px;
+  }
+}
+
+/* Enlarge Python packages section on laptops */
+@media (min-width: 1024px) {
+  .packages-section .package-card {
+    padding: 40px;
+  }
+  .packages-section .package-card h3 {
+    font-size: 2.2rem;
+  }
+  .packages-section .package-desc {
+    font-size: 1.1rem;
+  }
+  .packages-grid, .packages-featured {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   }
 }
 
@@ -1092,8 +1245,8 @@ section {
 
 .exp-list {
   margin-top: 1.2rem;
-  padding-left: 1rem;
-  list-style: none;
+  padding-left: 1.5rem;
+  list-style-type: disc;
 }
 
 .exp-list li {
@@ -1101,17 +1254,9 @@ section {
   color: #d2d6e2;
   font-size: 0.95rem;
   line-height: 1.5;
-  position: relative;
-  padding-left: 15px;
+  padding-left: 0;
+  position: static;
 }
-
-.exp-list li:before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #6ea8ff;
-}
-
 
 .projects-grid {
   display: flex;

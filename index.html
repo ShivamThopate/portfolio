@@ -3,19 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-  <!-- Primary SEO -->
+  <!-- Primary SEO Meta Tags -->
   <title>Kethan Dosapati | AI Engineer Portfolio • Machine Learning • GenAI • Internship 2025</title>
   <meta name="description" content="Kethan Dosapati is an AI Engineer specializing in production-ready GenAI tools, chatbots, vision APIs & web scraping. Open to Summer 2025 internships.">
-  <meta name="keywords" content="Kethan Dosapati, AI Engineer, Machine Learning, Generative AI, Multi-Agent AI, Prompt Engineering, Python Developer, Internship Summer 2025, Web Scraping, API Development">
+  <meta name="keywords" content="Kethan Dosapati, AI Engineer, Machine Learning, Generative AI, Multi-Agent AI, Prompt Engineering, Python Developer, Summer 2025 Internship, Web Scraping, API Development">
   <meta name="author" content="Kethan Dosapati">
   <meta name="robots" content="index, follow">
 
-  <!-- Canonical -->
+  <!-- Canonical & Sitemap -->
   <link rel="canonical" href="https://dkethan.github.io/" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
-  <!-- Open Graph -->
+  <!-- rel="me" for IndieWeb / profile verification -->
+  <link rel="me" href="https://github.com/DKethan" />
+  <link rel="me" href="https://pypi.org/user/dkethan/" />
+  <link rel="me" href="https://huggingface.co/DKethan" />
+  <link rel="me" href="https://share.streamlit.io/user/dkethan" />
+  <link rel="me" href="https://www.linkedin.com/in/kethan-dosapati/" />
+  <link rel="me" href="https://medium.com/@kethandosapati" />
+  <link rel="me" href="https://www.instagram.com/kethandosapati/" />
+  <link rel="me" href="https://linktr.ee/kethandosapati" />
+  <link rel="me" href="https://www.instagram.com/filmicharmony/" />
+  <link rel="me" href="https://www.youtube.com/channel/UCZjJz4iOz0rrOAl9l2_hz7Q" />
+  <link rel="me" href="https://vsco.co/thekethan/gallery" />
+
+  <!-- Open Graph / Facebook -->
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://dkethan.github.io/" />
@@ -30,15 +44,16 @@
   <meta name="twitter:description" content="Production-ready AI tools, chatbots, GenAI, vision APIs & Python libraries by Kethan Dosapati." />
   <meta name="twitter:image" content="https://dkethan.github.io/assets/preview.png" />
 
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <!-- (Optional) iOS icons, Android manifest, theme-color… -->
+
   <!-- Styles & Fonts -->
   <link rel="stylesheet" href="assets/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
 
-  <!-- Link to sitemap -->
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-
-  <!-- Structured Data -->
+  <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -47,22 +62,43 @@
           "@type": "Person",
           "name": "Kethan Dosapati",
           "url": "https://dkethan.github.io/",
-          "sameAs": [
-            "https://github.com/DKethan",
-            "https://www.linkedin.com/in/kethan-dosapati/",
-            "https://huggingface.co/DKethan",
-            "https://medium.com/@kethandosapati"
-          ],
+          "image": "https://dkethan.github.io/assets/profile.png",
           "jobTitle": "AI Engineer",
           "worksFor": {
             "@type": "Organization",
             "name": "Open to Summer 2025 Internships"
-          }
+          },
+          "sameAs": [
+            "https://github.com/DKethan",
+            "https://pypi.org/user/dkethan/",
+            "https://huggingface.co/DKethan",
+            "https://share.streamlit.io/user/dkethan",
+            "https://www.linkedin.com/in/kethan-dosapati/",
+            "https://medium.com/@kethandosapati",
+            "https://www.instagram.com/kethandosapati/",
+            "https://linktr.ee/kethandosapati",
+            "https://www.instagram.com/filmicharmony/",
+            "https://www.youtube.com/channel/UCZjJz4iOz0rrOAl9l2_hz7Q",
+            "https://vsco.co/thekethan/gallery"
+          ]
         },
         {
           "@type": "WebSite",
           "url": "https://dkethan.github.io/",
           "name": "Kethan Dosapati Portfolio",
+          "sameAs": [
+            "https://github.com/DKethan",
+            "https://pypi.org/user/dkethan/",
+            "https://huggingface.co/DKethan",
+            "https://share.streamlit.io/user/dkethan",
+            "https://www.linkedin.com/in/kethan-dosapati/",
+            "https://medium.com/@kethandosapati",
+            "https://www.instagram.com/kethandosapati/",
+            "https://linktr.ee/kethandosapati",
+            "https://www.instagram.com/filmicharmony/",
+            "https://www.youtube.com/channel/UCZjJz4iOz0rrOAl9l2_hz7Q",
+            "https://vsco.co/thekethan/gallery"
+          ],
           "potentialAction": {
             "@type": "SearchAction",
             "target": "https://dkethan.github.io/?s={search_term}",
@@ -80,16 +116,13 @@
       ]
     }
   </script>
-
 </head>
 <body>
 <!-- Navigation -->
 <nav class="navbar">
   <div class="container">
     <a href="index.html" class="logo">Kethan Dosapati</a>
-    <div class="menu-toggle" id="mobile-menu">
-      <span></span><span></span><span></span>
-    </div>
+    <div class="menu-toggle" id="mobile-menu"><span></span><span></span><span></span></div>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
@@ -115,7 +148,7 @@
       </div>
     </div>
     <div class="hero-image">
-      <img src="assets/profile.png" alt="Kethan Dosapati" class="profile-img">
+      <img src="assets/profile.png" alt="Portrait of Kethan Dosapati, AI Engineer" class="profile-img">
     </div>
   </div>
 </section>
@@ -125,10 +158,8 @@
   <div class="container">
     <h2 class="section-title">About Me</h2>
     <div class="about-content">
-      <p>
-        Hi, I’m Kethan Dosapati, an AI Engineer passionate about building end-to-end intelligent systems that solve real-world problems.<br><br>
-        I specialize in production-ready AI tools, including chatbots, GenAI chatbots, Multi-Agent systems, and vision-based APIs that transform complex ideas into scalable solutions.
-      </p>
+      <p>Hi, I’m Kethan Dosapati, an AI Engineer passionate about building end-to-end intelligent systems that solve real-world problems.<br><br>
+        I specialize in production-ready AI tools, including chatbots, GenAI chatbots, Multi-Agent systems, and vision-based APIs that transform complex ideas into scalable solutions.</p>
       <div class="social-links">
         <a href="https://github.com/DKethan" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://pypi.org/user/dkethan/" target="_blank"><i class="fab fa-python"></i></a>
@@ -146,13 +177,11 @@
   </div>
 </section>
 
-
 <!-- Packages Section -->
 <section id="packages" class="section packages-section">
   <div class="container">
     <h2 class="section-title">PYTHON PACKAGES</h2>
     <p class="section-subtitle">Open-source Python libraries I've published to help developers build AI applications faster</p>
-    
     <div class="packages-featured">
       <!-- Package 1 -->
       <div class="package-card featured">
@@ -174,7 +203,6 @@
           <a href="https://github.com/DKethan/Wrapper4AI" class="package-link-secondary" target="_blank">GitHub Repo</a>
         </div>
       </div>
-      
       <!-- Package 2 -->
       <div class="package-card featured">
         <div class="package-badge">FEATURED</div>
@@ -196,7 +224,6 @@
         </div>
       </div>
     </div>
-    
     <div class="text-center">
       <a href="projects.html" class="btn btn-outline">VIEW ALL PROJECTS</a>
     </div>
