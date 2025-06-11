@@ -25,10 +25,10 @@ if (tabButtons.length > 0) {
       // Remove active class from all buttons and contents
       tabButtons.forEach(btn => btn.classList.remove('active'));
       tabContents.forEach(content => content.classList.remove('active'));
-      
+
       // Add active class to clicked button
       button.classList.add('active');
-      
+
       // Show corresponding content
       const tabId = button.getAttribute('data-tab');
       document.getElementById(`${tabId}-content`).classList.add('active');
@@ -47,7 +47,7 @@ if (copyButtons.length > 0) {
         const originalHTML = button.innerHTML;
         button.innerHTML = '<i class="fas fa-check"></i>';
         button.style.color = 'var(--success)';
-        
+
         // Reset after 2 seconds
         setTimeout(() => {
           button.innerHTML = originalHTML;
@@ -93,6 +93,33 @@ const animateOnScroll = () => {
     }
   });
 };
+
+// Scroll to top button functionality
+const scrollToTopButton = document.getElementById('scroll-to-top');
+if (scrollToTopButton) {
+  // Show/hide button based on scroll position
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollToTopButton.classList.add('visible');
+    } else {
+      scrollToTopButton.classList.remove('visible');
+    }
+  });
+
+  // Scroll to top when button is clicked
+  scrollToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
+// Update copyright year in footer
+const copyrightYearElement = document.getElementById('copyright-year');
+if (copyrightYearElement) {
+  copyrightYearElement.textContent = new Date().getFullYear();
+}
 
 window.addEventListener('scroll', animateOnScroll);
 window.addEventListener('load', animateOnScroll);

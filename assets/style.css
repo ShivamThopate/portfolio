@@ -43,7 +43,8 @@ section {
 /* extra space to offset fixed navbar */
 .section.projects,
 .section.experience,
-.section.contact {
+.section.contact,
+.section.tech-stack {
   padding-top: 80px;
 }
 
@@ -1590,8 +1591,61 @@ section {
 
 /* Responsive Layouts */
 @media (max-width: 767px) {
+  .footer-2025-x {
+    padding: 40px 0 30px;
+  }
+
+  .footer-2025-x .container {
+    padding: 0 15px;
+  }
+
   .footer-2025-x .footer-grid {
     flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-2025-x .identity-section,
+  .footer-2025-x .quick-links {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .footer-2025-x .quick-links ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-2025-x .quick-links a {
+    padding-right: 0;
+  }
+
+  .footer-2025-x .quick-links a::before {
+    display: none;
+  }
+
+  .footer-2025-x .social-links {
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .footer-2025-x .social-links a {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .footer-2025-x .footer-bottom {
+    padding-top: 15px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+  }
+
+  .footer-2025-x .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
   }
 }
 
