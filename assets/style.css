@@ -3,7 +3,7 @@
   --primary: #1e40af;        /* Darker blue for primary */
   --primary-dark: #1e3a8a;   /* Even darker blue */
   --secondary: #475569;      /* Slate gray for secondary */
-  --dark: #0f172a;           /* Dark navy */  
+  --dark: #0f172a;           /* Dark navy */
   --dark-light: #1e293b;     /* Slightly lighter navy */
   --light: #f8fafc;          /* Light color for contrast */
   --gray: #94a3b8;           /* Mid-gray */
@@ -25,7 +25,7 @@ html {
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--dark);
-  color: var(--light);  
+  color: var(--light);
   line-height: 1.6;
 }
 
@@ -974,26 +974,6 @@ section {
   }
 }
 
-@media (min-width: 768px) {
-  .menu-toggle {
-    display: none !important;
-  }
-  .nav-links {
-    position: static !important;
-    flex-direction: row !important;
-    height: auto !important;
-    background: none !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-    left: 0 !important;
-    width: auto !important;
-    transition: none !important;
-  }
-  .nav-links li {
-    margin: 0 0 0 30px !important;
-  }
-}
-
 @media (max-width: 576px) {
   .hero-title {
     font-size: 2rem;
@@ -1343,12 +1323,13 @@ section {
   --transition-speed: 0.3s;
 
   position: relative;
-  margin-top: 10px;      /* Reduced from 20px */
-  padding: 0;            /* Remove extra vertical padding */
+  margin-top: 0 !important;
+  padding: 0 !important;
   width: 100%;
   color: var(--text-primary);
   font-family: 'Inter', sans-serif;
   font-size: 0.95rem;    /* Add or decrease as needed */
+  margin-bottom: 0 !important;
 }
 
 /* Animated gradient accent bar - Removed as requested
@@ -1372,7 +1353,9 @@ section {
   background: var(--footer-bg);
   position: relative;
   overflow: hidden;
-  padding: 32px 0 8px;  /* Increased top padding from 12px to 32px, keep bottom compact */
+  padding: 0 !important;
+  padding-bottom: 0 !important;
+  padding-top: 20px !important;
 }
 
 /* Subtle grain overlay */
@@ -1402,13 +1385,13 @@ section {
 .footer-2025-x .footer-grid {
   display: flex;
   justify-content: space-between;
-  gap: 4px;             /* Further reduced from 8px */
-  margin-bottom: 8px;   /* Further reduced from 20px */
+  gap: 12px;
+  margin-bottom: 40px;
 }
 
 /* Footer section styling */
 .footer-2025-x .footer-section {
-  padding: 4px 0;       /* Further reduced from 12px 0 */
+  padding: 25px 0;
   transition: transform var(--transition-speed);
   flex: 1;
 }
@@ -1447,12 +1430,12 @@ section {
   padding: 0;
 }
 
-.footer-2025-x .quick-links ul li:first-child {
-  margin-top: 16px; /* Add space below 'Quick Links' heading */
-}
-
 .footer-2025-x .quick-links li {
   margin-bottom: 12px;
+}
+
+.footer-2025-x .quick-links ul li:first-child {
+  margin-top: 16.5px; /* Set to 16.5px */
 }
 
 .footer-2025-x .quick-links a {
@@ -1556,8 +1539,12 @@ section {
 /* Footer Bottom */
 .footer-2025-x .footer-bottom {
   text-align: center;
-  padding-top: 4px;     /* Further reduced from 10px */
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 0 !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
 }
 
 .footer-2025-x .footer-bottom p {
@@ -1617,16 +1604,15 @@ section {
 /* Responsive Layouts */
 @media (max-width: 767px) {
   .footer-2025-x {
-    padding: 8px 0 4px; /* Further reduced from 20px 0 10px */
+    padding: 0 !important;
   }
-
   .footer-2025-x .container {
     padding: 0 15px;
   }
 
   .footer-2025-x .footer-grid {
     flex-direction: column;
-    gap: 4px;           /* Further reduced from 10px */
+    gap: 20px;
   }
 
   .footer-2025-x .identity-section,
@@ -1661,9 +1647,9 @@ section {
   }
 
   .footer-2025-x .footer-bottom {
-    padding-top: 2px;    /* Further reduced from 8px */
-    padding-bottom: 4px; /* Further reduced from 10px */
-    margin-top: 2px;     /* Further reduced from 5px */
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 10px;
   }
 
   .footer-2025-x .scroll-to-top {
@@ -1671,12 +1657,6 @@ section {
     right: 20px;
     width: 45px;
     height: 45px;
-  }
-}
-
-@media (max-width: 767px) {
-  .footer-2025-x .footer-glass {
-    padding: 20px 0 4px; /* Increased top padding for mobile, keep bottom compact */
   }
 }
 
