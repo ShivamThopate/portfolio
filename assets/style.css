@@ -3,7 +3,7 @@
   --primary: #1e40af;        /* Darker blue for primary */
   --primary-dark: #1e3a8a;   /* Even darker blue */
   --secondary: #475569;      /* Slate gray for secondary */
-  --dark: #0f172a;           /* Dark navy */
+  --dark: #0f172a;           /* Dark navy */  
   --dark-light: #1e293b;     /* Slightly lighter navy */
   --light: #f8fafc;          /* Light color for contrast */
   --gray: #94a3b8;           /* Mid-gray */
@@ -25,7 +25,7 @@ html {
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--dark);
-  color: var(--light);
+  color: var(--light);  
   line-height: 1.6;
 }
 
@@ -1343,7 +1343,8 @@ section {
   --transition-speed: 0.3s;
 
   position: relative;
-  margin-top: 40px;      /* Reduced from 80px */
+  margin-top: 10px;      /* Reduced from 20px */
+  padding: 0;            /* Remove extra vertical padding */
   width: 100%;
   color: var(--text-primary);
   font-family: 'Inter', sans-serif;
@@ -1371,7 +1372,7 @@ section {
   background: var(--footer-bg);
   position: relative;
   overflow: hidden;
-  padding: 60px 0 40px;
+  padding: 32px 0 8px;  /* Increased top padding from 12px to 32px, keep bottom compact */
 }
 
 /* Subtle grain overlay */
@@ -1401,13 +1402,13 @@ section {
 .footer-2025-x .footer-grid {
   display: flex;
   justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 40px;
+  gap: 4px;             /* Further reduced from 8px */
+  margin-bottom: 8px;   /* Further reduced from 20px */
 }
 
 /* Footer section styling */
 .footer-2025-x .footer-section {
-  padding: 25px 0;
+  padding: 4px 0;       /* Further reduced from 12px 0 */
   transition: transform var(--transition-speed);
   flex: 1;
 }
@@ -1444,6 +1445,10 @@ section {
 .footer-2025-x .quick-links ul {
   list-style: none;
   padding: 0;
+}
+
+.footer-2025-x .quick-links ul li:first-child {
+  margin-top: 16px; /* Add space below 'Quick Links' heading */
 }
 
 .footer-2025-x .quick-links li {
@@ -1551,7 +1556,7 @@ section {
 /* Footer Bottom */
 .footer-2025-x .footer-bottom {
   text-align: center;
-  padding-top: 20px;
+  padding-top: 4px;     /* Further reduced from 10px */
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -1612,7 +1617,7 @@ section {
 /* Responsive Layouts */
 @media (max-width: 767px) {
   .footer-2025-x {
-    padding: 40px 0 30px;
+    padding: 8px 0 4px; /* Further reduced from 20px 0 10px */
   }
 
   .footer-2025-x .container {
@@ -1621,7 +1626,7 @@ section {
 
   .footer-2025-x .footer-grid {
     flex-direction: column;
-    gap: 20px;
+    gap: 4px;           /* Further reduced from 10px */
   }
 
   .footer-2025-x .identity-section,
@@ -1656,9 +1661,9 @@ section {
   }
 
   .footer-2025-x .footer-bottom {
-    padding-top: 15px;
-    padding-bottom: 20px;
-    margin-top: 10px;
+    padding-top: 2px;    /* Further reduced from 8px */
+    padding-bottom: 4px; /* Further reduced from 10px */
+    margin-top: 2px;     /* Further reduced from 5px */
   }
 
   .footer-2025-x .scroll-to-top {
@@ -1666,6 +1671,12 @@ section {
     right: 20px;
     width: 45px;
     height: 45px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-2025-x .footer-glass {
+    padding: 20px 0 4px; /* Increased top padding for mobile, keep bottom compact */
   }
 }
 
