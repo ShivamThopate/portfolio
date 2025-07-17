@@ -1323,11 +1323,13 @@ section {
   --transition-speed: 0.3s;
 
   position: relative;
-  margin-top: 40px;      /* Reduced from 80px */
+  margin-top: 0 !important;
+  padding: 0 !important;
   width: 100%;
   color: var(--text-primary);
   font-family: 'Inter', sans-serif;
   font-size: 0.95rem;    /* Add or decrease as needed */
+  margin-bottom: 0 !important;
 }
 
 /* Animated gradient accent bar - Removed as requested
@@ -1351,7 +1353,9 @@ section {
   background: var(--footer-bg);
   position: relative;
   overflow: hidden;
-  padding: 60px 0 40px;
+  padding: 0 !important;
+  padding-bottom: 0 !important;
+  padding-top: 20px !important;
 }
 
 /* Subtle grain overlay */
@@ -1428,6 +1432,10 @@ section {
 
 .footer-2025-x .quick-links li {
   margin-bottom: 12px;
+}
+
+.footer-2025-x .quick-links ul li:first-child {
+  margin-top: 16.5px; /* Set to 16.5px */
 }
 
 .footer-2025-x .quick-links a {
@@ -1531,8 +1539,12 @@ section {
 /* Footer Bottom */
 .footer-2025-x .footer-bottom {
   text-align: center;
-  padding-top: 20px;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 0 !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
 }
 
 .footer-2025-x .footer-bottom p {
@@ -1592,9 +1604,8 @@ section {
 /* Responsive Layouts */
 @media (max-width: 767px) {
   .footer-2025-x {
-    padding: 40px 0 30px;
+    padding: 0 !important;
   }
-
   .footer-2025-x .container {
     padding: 0 15px;
   }
@@ -1636,8 +1647,8 @@ section {
   }
 
   .footer-2025-x .footer-bottom {
-    padding-top: 15px;
-    padding-bottom: 20px;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
     margin-top: 10px;
   }
 
