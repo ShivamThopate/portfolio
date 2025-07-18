@@ -1383,16 +1383,25 @@ section {
 
 /* Grid layout for footer sections */
 .footer-2025-x .footer-grid {
+  margin-bottom: 40px;
+}
+
+/* Top row for identity and quick links on same line */
+.footer-2025-x .footer-top-row {
   display: flex;
   justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 40px;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 30px;
 }
 
 /* Footer section styling */
 .footer-2025-x .footer-section {
   padding: 25px 0;
   transition: transform var(--transition-speed);
+}
+
+.footer-2025-x .footer-top-row .footer-section {
   flex: 1;
 }
 
@@ -1423,6 +1432,7 @@ section {
 /* B. Quick Links Section */
 .footer-2025-x .quick-links {
   text-align: right;
+  margin-top: 2px;
 }
 
 .footer-2025-x .quick-links ul {
@@ -1611,8 +1621,13 @@ section {
   }
 
   .footer-2025-x .footer-grid {
+    gap: 20px;
+  }
+
+  .footer-2025-x .footer-top-row {
     flex-direction: column;
     gap: 20px;
+    align-items: center;
   }
 
   .footer-2025-x .identity-section,
