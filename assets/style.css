@@ -907,24 +907,51 @@ section {
 /* iPad and tablet specific styles */
 @media (min-width: 768px) and (max-width: 1024px) {
   .navbar {
-    padding: 15px 0;
+    padding: 12px 0 !important;
   }
   
   .navbar.scrolled {
-    padding: 12px 0;
+    padding: 10px 0 !important;
   }
   
   .logo {
-    font-size: 1.3rem;
+    font-size: 1.2rem !important;
   }
   
   .nav-links li {
-    margin-left: 20px;
+    margin-left: 15px !important;
   }
   
   .nav-links a {
-    font-size: 0.9rem;
-    padding: 6px 10px;
+    font-size: 0.85rem !important;
+    padding: 5px 8px !important;
+  }
+}
+
+/* Additional iPad specific targeting */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+  .navbar {
+    padding: 10px 0 !important;
+  }
+  
+  .navbar.scrolled {
+    padding: 8px 0 !important;
+  }
+  
+  .logo {
+    font-size: 1.1rem !important;
+  }
+  
+  .nav-links li {
+    margin-left: 12px !important;
+  }
+  
+  .nav-links a {
+    font-size: 0.8rem !important;
+    padding: 4px 6px !important;
   }
 }
 
