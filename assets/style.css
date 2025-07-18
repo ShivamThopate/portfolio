@@ -904,57 +904,30 @@ section {
 
 }
 
-/* iPad and tablet specific styles */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .navbar {
-    padding: 12px 0 !important;
+/* Tablet-specific styles (768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .menu-toggle {
+    display: none;
   }
-  
-  .navbar.scrolled {
-    padding: 10px 0 !important;
+
+  .nav-links {
+    position: static;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    transition: none;
+    z-index: auto;
   }
-  
-  .logo {
-    font-size: 1.2rem !important;
-  }
-  
+
   .nav-links li {
-    margin-left: 15px !important;
-  }
-  
-  .nav-links a {
-    font-size: 0.85rem !important;
-    padding: 5px 8px !important;
+    margin: 0 0 0 30px;
   }
 }
 
-/* Additional iPad specific targeting */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 2) {
-  .navbar {
-    padding: 10px 0 !important;
-  }
-  
-  .navbar.scrolled {
-    padding: 8px 0 !important;
-  }
-  
-  .logo {
-    font-size: 1.1rem !important;
-  }
-  
-  .nav-links li {
-    margin-left: 12px !important;
-  }
-  
-  .nav-links a {
-    font-size: 0.8rem !important;
-    padding: 4px 6px !important;
-  }
-}
-
+/* Mobile styles (768px and below) */
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
