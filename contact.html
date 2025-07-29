@@ -47,14 +47,15 @@
 <!-- Contact Section -->
 <section class="section contact">
   <div class="container">
-    <h2 class="section-title">GET IN TOUCH</h2>
+    <h2 class="section-title">BUILD WITH ME</h2>
+    <p class="section-subtitle">Let's architect the next AI revenue engine</p>
 
     <div class="contact-grid fade-in">
 
       <!-- Left: Contact Info -->
       <div class="contact-info-box">
-        <h3>Reach Out</h3>
-        <p class="contact-description">Whether it's a collaboration, opportunity, or a casual hello, I'm just a message away!</p>
+        <h3>Direct Contact</h3>
+        <p class="contact-description">Ready to deploy AI that drives measurable business impact? Reach out directly:</p>
 
         <div class="contact-detail">
           <i class="fas fa-envelope"></i>
@@ -64,23 +65,35 @@
           <i class="fas fa-map-marker-alt"></i>
           <span>New Jersey, USA</span>
         </div>
+        <div class="contact-detail">
+          <i class="fas fa-clock"></i>
+          <span>Response within 24 hours</span>
+        </div>
 
         <div class="contact-socials">
           <a href="https://github.com/DKethan" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
           <a href="https://www.linkedin.com/in/kethan-dosapati/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
           <a href="https://medium.com/@kethandosapati" target="_blank" title="Medium"><i class="fab fa-medium"></i></a>
-          <a href="https://huggingface.co/DKethan" target="_blank"><i class="fas fa-grin"></i></a>
+          <a href="https://huggingface.co/DKethan" target="_blank" title="Hugging Face"><i class="fas fa-grin"></i></a>
         </div>
       </div>
 
       <!-- Right: Form -->
       <div class="contact-form-box">
+        <h3>Project Inquiry</h3>
         <form action="https://formspree.io/f/xvgazbld" method="POST" class="contact-form">
-          <input type="text" name="name" placeholder="Full Name" required>
-          <input type="email" name="email" placeholder="Email Address" required>
-          <input type="text" name="subject" placeholder="Subject (optional)">
-          <textarea name="message" placeholder="Type your message..." rows="5" required></textarea>
-          <button type="submit" class="btn btn-primary">Send Message</button>
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <select name="project_type" required>
+            <option value="" disabled selected>Project Type</option>
+            <option value="GenAI Chatbot">GenAI Chatbot</option>
+            <option value="Multi-Agent System">Multi-Agent System</option>
+            <option value="Vision API">Vision API</option>
+            <option value="Data Pipeline">Data Pipeline</option>
+            <option value="Custom Solution">Custom Solution</option>
+          </select>
+          <textarea name="message" placeholder="Describe your project goals and timeline..." rows="5" required></textarea>
+          <button type="submit" class="btn btn-primary btn-large">BUILD WITH ME</button>
         </form>
       </div>
 
