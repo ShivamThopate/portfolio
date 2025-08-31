@@ -2495,16 +2495,22 @@ p {
 
 /* Footer Bottom */
 .footer-2025-x .footer-bottom {
-  text-align: center;
+  text-align: center !important;
   padding: 10px 0 10px 0 !important;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   margin-bottom: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer-2025-x .footer-bottom p {
   color: var(--text-secondary);
   font-size: 0.9rem;
-  margin: 0;
+  margin: 0 !important;
+  text-align: center !important;
+  width: 100%;
+  display: block;
 }
 
 /* Scroll-to-top FAB */
