@@ -647,20 +647,21 @@ p {
   overflow: hidden;
   box-shadow: var(--shadow-xl);
   border: 1px solid var(--border-light);
+  background: #ffffff;
 }
 
 .resume-embed {
   position: relative;
   width: 100%;
   height: 600px;
-  background: transparent;
+  background: #ffffff;
 }
 
 .resume-embed iframe {
   width: 100%;
   height: 100%;
   border: none;
-  background: transparent;
+  background: #ffffff;
 }
 
 .resume-actions {
@@ -676,10 +677,17 @@ p {
     height: 70vh;
     min-height: 500px;
     max-height: 800px;
+    background: #ffffff !important;
   }
   
   .resume-embed iframe {
-    background: transparent;
+    background: #ffffff !important;
+  }
+  
+  .resume-preview {
+    background: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
   }
   
   .resume-actions {
@@ -697,6 +705,17 @@ p {
   .resume-embed {
     height: 65vh;
     min-height: 450px;
+    background: #ffffff !important;
+  }
+  
+  .resume-embed iframe {
+    background: #ffffff !important;
+  }
+  
+  .resume-preview {
+    background: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
   }
   
   .resume-actions {
