@@ -114,7 +114,6 @@
         <div class="resume-embed">
           <iframe 
             src="https://docs.google.com/document/d/1Z3PdYQE02HJu6Y1_OfzASRpdvWXy8yMgmEJHW-55xZ0/preview" 
-            style="border: none;"
             title="Kethan Dosapati Resume"
             loading="lazy"
             allow="fullscreen"
@@ -157,23 +156,16 @@
 <!-- Resume-specific mobile enhancements -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Improve iframe loading experience on mobile
   const iframe = document.querySelector('.resume-embed iframe');
-  
-  // Removed loading indicator - iframe shows immediately
+  const resumeEmbed = document.querySelector('.resume-embed');
   
   // Add haptic feedback for mobile button taps (if supported)
   const buttons = document.querySelectorAll('.resume-actions .btn');
   buttons.forEach(button => {
     button.addEventListener('touchstart', function() {
-      // Vibrate for 50ms if supported
       if (navigator.vibrate) {
         navigator.vibrate(50);
       }
-    });
-    
-    // Add visual feedback for touch
-    button.addEventListener('touchstart', function() {
       this.style.transform = 'scale(0.98)';
     });
     
@@ -184,23 +176,43 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Optimize for mobile viewport
-  function optimizeForMobile() {
+  // Mobile-optimized iframe handling
+  function optimizeResumeForMobile() {
     if (window.innerWidth <= 768) {
-      // Adjust iframe height based on viewport
-      if (iframe) {
+      if (iframe && resumeEmbed) {
+        // Set responsive height based on viewport
         const viewportHeight = window.innerHeight;
-        const optimalHeight = Math.min(Math.max(viewportHeight * 0.6, 400), 700);
-        iframe.style.height = optimalHeight + 'px';
+        const navbarHeight = 80;
+        const actionsHeight = 100;
+        const padding = 40;
+        
+        const availableHeight = viewportHeight - navbarHeight - actionsHeight - padding;
+        const optimalHeight = Math.min(Math.max(availableHeight * 0.8, 450), 800);
+        
+        resumeEmbed.style.height = optimalHeight + 'px';
+        
+        // Ensure iframe fills container
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.style.border = 'none';
+        iframe.style.background = 'transparent';
+      }
+    } else {
+      // Desktop view
+      if (resumeEmbed) {
+        resumeEmbed.style.height = '600px';
       }
     }
   }
   
-  // Run on load and resize
-  optimizeForMobile();
-  window.addEventListener('resize', optimizeForMobile);
+  // Run optimization on load and resize
+  optimizeResumeForMobile();
+  window.addEventListener('resize', optimizeResumeForMobile);
+  window.addEventListener('orientationchange', function() {
+    setTimeout(optimizeResumeForMobile, 100);
+  });
   
-  // Improve scroll behavior on mobile
+  // Improve scroll behavior
   if ('scrollBehavior' in document.documentElement.style) {
     document.documentElement.style.scrollBehavior = 'smooth';
   }
