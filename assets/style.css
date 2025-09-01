@@ -226,7 +226,8 @@ section {
 .section.projects,
 .section.experience,
 .section.contact,
-.section.tech-stack {
+.section.tech-stack,
+.section.resume {
   padding-top: var(--space-12);
 }
 
@@ -2746,11 +2747,31 @@ body.light-theme .footer-2025-x {
   padding: var(--space-3) var(--space-4);
   font-size: var(--text-base);
   min-width: 160px;
+  min-height: 44px;
   justify-content: center;
+  border-radius: 12px;
+  transition: all var(--duration-fast) var(--ease-professional);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  position: relative;
+  overflow: hidden;
 }
 
 .resume-actions .btn i {
   font-size: var(--text-sm);
+}
+
+.resume-actions .btn:active {
+  transform: scale(0.98);
+  transition-duration: 100ms;
+}
+
+.resume-actions .btn-primary:active {
+  box-shadow: var(--shadow-md);
+}
+
+.resume-actions .btn-secondary:active {
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .resume-preview {
@@ -2758,161 +2779,20 @@ body.light-theme .footer-2025-x {
   position: relative;
 }
 
-
-
 .resume-embed {
   overflow: hidden;
+  border-radius: 12px;
+  background: var(--bg-card);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
 }
 
 .resume-embed iframe {
   display: block;
   border: none;
   border-radius: 12px;
-}
-
-.resume-summary {
-  margin-bottom: var(--space-8);
-}
-
-.resume-summary h3 {
-  font-family: var(--font-heading);
-  font-size: var(--heading-3);
-  color: var(--text-primary);
-  margin-bottom: var(--space-4);
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.highlights-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-4);
-  margin-top: var(--space-6);
-}
-
-.highlight-card {
-  background: var(--bg-card);
-  border-radius: 12px;
-  padding: var(--space-4);
-  text-align: center;
-  border: 1px solid var(--border-light);
-  transition: all var(--duration-normal) var(--ease-professional);
-  position: relative;
-  overflow: hidden;
-}
-
-.highlight-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--gradient-primary);
-  transform: scaleX(0);
-  transition: transform var(--duration-normal) var(--ease-professional);
-}
-
-.highlight-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--accent-indigo);
-}
-
-.highlight-card:hover::before {
-  transform: scaleX(1);
-}
-
-.highlight-icon {
-  width: 60px;
-  height: 60px;
-  background: rgba(59, 130, 246, 0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto var(--space-3);
-  transition: all var(--duration-normal) var(--ease-professional);
-}
-
-.highlight-icon i {
-  font-size: var(--text-2xl);
-  color: var(--accent-indigo);
-}
-
-.highlight-card:hover .highlight-icon {
-  background: var(--gradient-primary);
-  transform: scale(1.1);
-}
-
-.highlight-card:hover .highlight-icon i {
-  color: var(--text-primary);
-}
-
-.highlight-card h4 {
-  font-family: var(--font-heading);
-  font-size: var(--text-xl);
-  color: var(--text-primary);
-  margin-bottom: var(--space-2);
-  font-weight: 600;
-}
-
-.highlight-card p {
-  color: var(--text-muted);
-  font-size: var(--text-sm);
-  line-height: var(--leading-relaxed);
-  margin: 0;
-}
-
-.resume-cta {
-  background: var(--bg-card);
-  border-radius: 16px;
-  padding: var(--space-6);
-  text-align: center;
-  border: 1px solid var(--border-light);
-  position: relative;
-  overflow: hidden;
-}
-
-.resume-cta::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.resume-cta h3 {
-  font-family: var(--font-heading);
-  font-size: var(--heading-3);
-  color: var(--text-primary);
-  margin-bottom: var(--space-3);
-  position: relative;
-  z-index: 1;
-}
-
-.resume-cta p {
-  color: var(--text-secondary);
-  font-size: var(--text-lg);
-  margin-bottom: var(--space-4);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  z-index: 1;
-}
-
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-3);
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 1;
+  width: 100%;
+  height: 800px;
 }
 
 /* Mobile Responsive */
@@ -2920,29 +2800,33 @@ body.light-theme .footer-2025-x {
   .resume-actions {
     flex-direction: column;
     align-items: center;
+    gap: var(--space-3);
   }
   
   .resume-actions .btn {
     width: 100%;
     max-width: 280px;
+    min-height: 48px;
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all var(--duration-fast) var(--ease-professional);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  
+  .resume-actions .btn:active {
+    transform: scale(0.98);
+    transition-duration: 100ms;
   }
   
   .resume-embed iframe {
     height: 600px;
-  }
-  
-  .highlights-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .cta-buttons .btn {
-    width: 100%;
-    max-width: 280px;
   }
 }
 
@@ -2955,43 +2839,21 @@ body.light-theme .footer-2025-x {
     height: 500px;
   }
   
-  .resume-cta {
-    padding: var(--space-4);
+  .resume-actions .btn {
+    max-width: 100%;
+    padding: var(--space-3) var(--space-3);
+    font-size: var(--text-sm);
+    min-height: 44px;
   }
 }
 
-.resume-iframe {
-  transform: scale(1.2);
-  transform-origin: top left;
-  width: 83.33%; /* Compensate for 1.2x scale */
-  height: 83.33%; /* Compensate for 1.2x scale */
-  border: none;
-  overflow: hidden;
-}
-
-.resume-embed {
-  overflow: hidden;
-  height: 800px;
-}
-
-/* Alternative approach for better content focus */
-@media (min-width: 768px) {
-  .resume-iframe {
-    transform: scale(1.3);
-    width: 76.92%; /* Compensate for 1.3x scale */
-    height: 76.92%; /* Compensate for 1.3x scale */
-  }
-}/* Hide
- footer on resume page while keeping functionality */
-.resume .footer-2025-x {
-  display: none;
-}
-
-/* Keep scroll-to-top button functional but hidden on resume page */
-.resume .scroll-to-top {
-  display: none;
-}/* Hide mo
-bile menu toggle on resume page */
+/* Enable mobile menu toggle on resume page for better mobile navigation */
 .resume .menu-toggle {
-  display: none !important;
+  display: flex !important;
+}
+
+@media (min-width: 769px) {
+  .resume .menu-toggle {
+    display: none !important;
+  }
 }

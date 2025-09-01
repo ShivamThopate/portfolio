@@ -114,8 +114,11 @@
         <div class="resume-embed">
           <iframe 
             src="https://docs.google.com/document/d/1Z3PdYQE02HJu6Y1_OfzASRpdvWXy8yMgmEJHW-55xZ0/preview" 
-            style="border: none; width: 100%; height: 800px;"
-            title="Kethan Dosapati Resume">
+            style="border: none;"
+            title="Kethan Dosapati Resume"
+            loading="lazy"
+            allow="fullscreen"
+            sandbox="allow-same-origin allow-scripts allow-popups allow-forms">
           </iframe>
         </div>
       </div>
@@ -124,13 +127,17 @@
       <div class="resume-actions">
         <a href="https://docs.google.com/document/d/1Z3PdYQE02HJu6Y1_OfzASRpdvWXy8yMgmEJHW-55xZ0/edit?usp=sharing" 
            target="_blank" 
-           class="btn btn-primary">
-          <i class="fas fa-external-link-alt"></i>
+           rel="noopener noreferrer"
+           class="btn btn-primary"
+           aria-label="View resume in Google Docs (opens in new tab)">
+          <i class="fas fa-external-link-alt" aria-hidden="true"></i>
           VIEW RESUME
         </a>
         <a href="https://docs.google.com/document/d/1Z3PdYQE02HJu6Y1_OfzASRpdvWXy8yMgmEJHW-55xZ0/export?format=pdf" 
-           class="btn btn-secondary">
-          <i class="fas fa-download"></i>
+           class="btn btn-secondary"
+           download="Kethan_Dosapati_Resume.pdf"
+           aria-label="Download resume as PDF">
+          <i class="fas fa-download" aria-hidden="true"></i>
           DOWNLOAD PDF
         </a>
       </div>
@@ -146,5 +153,58 @@
 
 <script src="assets/components.js"></script>
 <script src="assets/script.js"></script>
+
+<!-- Resume-specific mobile enhancements -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Improve iframe loading experience on mobile
+  const iframe = document.querySelector('.resume-embed iframe');
+  
+  // Removed loading indicator - iframe shows immediately
+  
+  // Add haptic feedback for mobile button taps (if supported)
+  const buttons = document.querySelectorAll('.resume-actions .btn');
+  buttons.forEach(button => {
+    button.addEventListener('touchstart', function() {
+      // Vibrate for 50ms if supported
+      if (navigator.vibrate) {
+        navigator.vibrate(50);
+      }
+    });
+    
+    // Add visual feedback for touch
+    button.addEventListener('touchstart', function() {
+      this.style.transform = 'scale(0.98)';
+    });
+    
+    button.addEventListener('touchend', function() {
+      setTimeout(() => {
+        this.style.transform = '';
+      }, 150);
+    });
+  });
+  
+  // Optimize for mobile viewport
+  function optimizeForMobile() {
+    if (window.innerWidth <= 768) {
+      // Adjust iframe height based on viewport
+      if (iframe) {
+        const viewportHeight = window.innerHeight;
+        const optimalHeight = Math.min(Math.max(viewportHeight * 0.6, 400), 700);
+        iframe.style.height = optimalHeight + 'px';
+      }
+    }
+  }
+  
+  // Run on load and resize
+  optimizeForMobile();
+  window.addEventListener('resize', optimizeForMobile);
+  
+  // Improve scroll behavior on mobile
+  if ('scrollBehavior' in document.documentElement.style) {
+    document.documentElement.style.scrollBehavior = 'smooth';
+  }
+});
+</script>
 </body>
 </html>
