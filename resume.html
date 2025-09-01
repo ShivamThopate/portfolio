@@ -178,30 +178,36 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Mobile-optimized iframe handling
   function optimizeResumeForMobile() {
-    if (window.innerWidth <= 768) {
-      if (iframe && resumeEmbed) {
-        // Set responsive height based on viewport
-        const viewportHeight = window.innerHeight;
-        const navbarHeight = 80;
-        const actionsHeight = 100;
-        const padding = 40;
-        
-        const availableHeight = viewportHeight - navbarHeight - actionsHeight - padding;
-        const optimalHeight = Math.min(Math.max(availableHeight * 0.8, 450), 800);
-        
-        resumeEmbed.style.height = optimalHeight + 'px';
-        
-        // Ensure iframe fills container
-        iframe.style.width = '100%';
-        iframe.style.height = '100%';
-        iframe.style.border = 'none';
-        iframe.style.background = 'transparent';
+    if (iframe && resumeEmbed) {
+      // Calculate full available height
+      const viewportHeight = window.innerHeight;
+      const navbarHeight = 80;
+      const actionsHeight = 100;
+      const titleHeight = 60; // Account for "RESUME" title
+      const padding = 20; // Reduced padding
+      
+      const availableHeight = viewportHeight - navbarHeight - actionsHeight - titleHeight - padding;
+      
+      if (window.innerWidth <= 768) {
+        // Mobile: Fill most of the screen
+        const mobileHeight = Math.max(availableHeight * 0.9, 500);
+        resumeEmbed.style.height = mobileHeight + 'px';
+      } else if (window.innerWidth <= 1024) {
+        // Tablet: Fill available space
+        const tabletHeight = Math.max(availableHeight * 0.85, 700);
+        resumeEmbed.style.height = tabletHeight + 'px';
+      } else {
+        // Desktop: Fill most available space or minimum 1000px
+        const desktopHeight = Math.max(availableHeight * 0.8, 1000);
+        resumeEmbed.style.height = desktopHeight + 'px';
       }
-    } else {
-      // Desktop view
-      if (resumeEmbed) {
-        resumeEmbed.style.height = '600px';
-      }
+      
+      // Ensure iframe fills container completely
+      iframe.style.width = '100%';
+      iframe.style.height = '100%';
+      iframe.style.border = 'none';
+      iframe.style.background = 'transparent';
+      iframe.style.display = 'block';
     }
   }
   
