@@ -57,6 +57,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+
+
 // Animation on scroll
 const animateOnScroll = () => {
   const elements = document.querySelectorAll('.fade-in, .slide-in');
