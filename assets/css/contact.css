@@ -1,0 +1,138 @@
+/* ===== Contact Section ===== */
+.contact-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+/* Unified Card Style */
+.contact-info-box,
+.contact-form-box {
+  background-color: #1e2636;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 transparent;
+  transition: all 0.3s ease;
+}
+
+.contact-info-box:hover,
+.contact-form-box:hover {
+  border: 1px solid #2962ff;
+  box-shadow: 0 0 20px rgba(41, 98, 255, 0.15);
+}
+
+/* Headings & Text */
+.contact-info-box h3 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.contact-description {
+  color: #c0c6d6;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Info Items */
+.contact-detail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: #d2d6e2;
+  font-size: 0.95rem;
+}
+
+.contact-detail i {
+  margin-right: 0.75rem;
+  color: #6ea8ff;
+}
+
+/* Social Icons */
+.contact-socials {
+  margin-top: 1.5rem;
+}
+
+.contact-socials a {
+  color: #fff;
+  background: #2c3446;
+  padding: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-socials a:hover {
+  background: #2962ff;
+  color: #fff;
+}
+
+/* Form Fields */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #2a3244;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #a8b1c0;
+}
+
+/* Submit Button */
+.contact-form .btn {
+  width: 100%;
+  background-color: #2962ff;
+  color: #fff;
+  border: none;
+  padding: 0.9rem 1.2rem;
+  font-weight: 600;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form .btn:hover {
+  background-color: #1f4cd2;
+}
+
+/* Responsive Contact Styles */
+@media (max-width: 768px) {
+  .contact-info-box,
+  .contact-form-box {
+    padding: 1.5rem;
+  }
+  
+  .contact-info-box h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-info-box,
+  .contact-form-box {
+    padding: 1.25rem;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.8rem 0.9rem;
+    font-size: 0.9rem;
+  }
+  
+  .contact-form .btn {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+}

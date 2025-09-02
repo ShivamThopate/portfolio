@@ -1,0 +1,87 @@
+/* ===== Experience Section ===== */
+.experience-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+/* Match project card design */
+.exp-card {
+  background-color: #1e2636;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 transparent;
+  transition: all 0.3s ease;
+}
+
+.exp-card:hover {
+  border: 1px solid #2962ff;
+  box-shadow: 0 0 20px rgba(41, 98, 255, 0.15);
+}
+
+.exp-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.exp-meta {
+  color: #c0c6d6;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.exp-role {
+  margin-top: 0.5rem;
+  color: #6ea8ff;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.exp-list {
+  margin-top: 1.2rem;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.exp-list li {
+  margin-bottom: 0.9rem;
+  color: #d2d6e2;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  padding-left: 0;
+  position: static;
+}
+
+/* Responsive Experience Styles */
+@media (max-width: 768px) {
+  .exp-card {
+    padding: 1.5rem;
+  }
+  
+  .exp-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .exp-role {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .exp-card {
+    padding: 1.25rem;
+  }
+  
+  .exp-header h3 {
+    font-size: 1rem;
+  }
+  
+  .exp-list li {
+    font-size: 0.9rem;
+  }
+}

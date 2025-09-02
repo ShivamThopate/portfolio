@@ -1,0 +1,331 @@
+/* ===== Design System Foundation ===== */
+:root {
+  /* Professional Color Palette - Warm charcoal with indigo accent */
+  --primary-charcoal: #1f2937;     /* Warm charcoal primary */
+  --secondary-charcoal: #374151;   /* Secondary charcoal */
+  --accent-indigo: #3b82f6;        /* Single indigo accent */
+  --accent-indigo-light: #60a5fa;  /* Light indigo variant */
+  --accent-indigo-dark: #2563eb;   /* Dark indigo variant */
+  
+  /* Text Colors */
+  --text-primary: #ffffff;         /* Primary white text */
+  --text-secondary: #f8fafc;       /* Secondary light text */
+  --text-muted: #9ca3af;          /* Muted gray text */
+  --text-light: #d1d5db;          /* Light gray text */
+  
+  /* Background Colors */
+  --bg-primary: #0f172a;          /* Deep background */
+  --bg-secondary: #1e293b;        /* Card/section background */
+  --bg-card: #1f2937;             /* Card background */
+  
+  /* Supporting Colors */
+  --success: #10b981;             /* Success green */
+  --border: #374151;              /* Subtle borders */
+  --border-light: rgba(255, 255, 255, 0.08);
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.3);
+  
+  /* 8px Spacing Grid System */
+  --space-1: 8px;    /* 8px */
+  --space-2: 16px;   /* 16px */
+  --space-3: 24px;   /* 24px */
+  --space-4: 32px;   /* 32px */
+  --space-5: 40px;   /* 40px */
+  --space-6: 48px;   /* 48px */
+  --space-8: 64px;   /* 64px */
+  --space-10: 80px;  /* 80px */
+  --space-12: 96px;  /* 96px */
+  --space-16: 128px; /* 128px */
+  
+  /* Typography System */
+  --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  /* Font Sizes - Responsive with clamp() */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 1.875rem;  /* 30px */
+  --text-4xl: 2.25rem;   /* 36px */
+  --text-5xl: 3rem;      /* 48px */
+  --text-6xl: 3.75rem;   /* 60px */
+  
+  /* Responsive Heading Scale */
+  --heading-1: clamp(2.5rem, 5vw, 4rem);      /* h1: 40px - 64px */
+  --heading-2: clamp(2rem, 4vw, 3rem);        /* h2: 32px - 48px */
+  --heading-3: clamp(1.5rem, 3vw, 2rem);      /* h3: 24px - 32px */
+  --heading-4: clamp(1.25rem, 2.5vw, 1.5rem); /* h4: 20px - 24px */
+  
+  /* Line Heights */
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.6;
+  --leading-loose: 1.8;
+  
+  /* Responsive Breakpoints */
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  
+  /* Container Widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1200px;
+  --container-2xl: 1400px;
+  
+  /* Motion & Transitions */
+  --duration-fast: 180ms;
+  --duration-normal: 250ms;
+  --duration-slow: 350ms;
+  --ease-professional: cubic-bezier(0.2, 0, 0, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Legacy Variables for Backward Compatibility */
+  --primary: var(--accent-indigo);
+  --primary-dark: var(--accent-indigo-dark);
+  --primary-light: var(--accent-indigo-light);
+  --dark: var(--bg-primary);
+  --dark-light: var(--bg-secondary);
+  --dark-card: var(--bg-card);
+  --light: var(--text-primary);
+  --gray: var(--text-muted);
+  --gray-light: var(--text-light);
+  --gradient-primary: linear-gradient(135deg, var(--accent-indigo) 0%, var(--accent-indigo-light) 100%);
+  --gradient-card: linear-gradient(145deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
+}
+
+html {
+  scroll-padding-top: 80px;
+  scroll-behavior: smooth;
+}
+
+/* Premium selection styles */
+::selection {
+  background: rgba(37, 99, 235, 0.3);
+  color: white;
+}
+
+::-moz-selection {
+  background: rgba(37, 99, 235, 0.3);
+  color: white;
+}
+
+/* Professional Motion System */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--duration-normal) var(--ease-professional), 
+              transform var(--duration-normal) var(--ease-professional);
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Utility Classes for Spacing */
+.mt-1 { margin-top: var(--space-1); }
+.mt-2 { margin-top: var(--space-2); }
+.mt-3 { margin-top: var(--space-3); }
+.mt-4 { margin-top: var(--space-4); }
+.mt-6 { margin-top: var(--space-6); }
+.mt-8 { margin-top: var(--space-8); }
+
+.mb-1 { margin-bottom: var(--space-1); }
+.mb-2 { margin-bottom: var(--space-2); }
+.mb-3 { margin-bottom: var(--space-3); }
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-6 { margin-bottom: var(--space-6); }
+.mb-8 { margin-bottom: var(--space-8); }
+
+.p-1 { padding: var(--space-1); }
+.p-2 { padding: var(--space-2); }
+.p-3 { padding: var(--space-3); }
+.p-4 { padding: var(--space-4); }
+.p-6 { padding: var(--space-6); }
+.p-8 { padding: var(--space-8); }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-ui), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
+  color: var(--text-primary);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+/* Responsive Container Widths */
+@media (min-width: 480px) {
+  .container {
+    padding: 0 var(--space-4);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--space-6);
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: var(--container-2xl);
+    padding: 0 var(--space-8);
+  }
+}
+
+section {
+  padding: var(--space-12) 0 var(--space-10);
+}
+
+/* extra space to offset fixed navbar */
+.section.projects,
+.section.experience,
+.section.contact,
+.section.tech-stack,
+.section.resume {
+  padding-top: var(--space-12);
+}
+
+.section-title {
+  font-family: var(--font-heading), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: var(--heading-1);
+  margin-bottom: var(--space-8);
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: var(--leading-tight);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 120px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+}
+
+.subsection-title {
+  font-family: var(--font-heading), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: var(--heading-3);
+  margin: var(--space-8) 0 var(--space-4);
+  color: var(--text-primary);
+  position: relative;
+  padding-left: var(--space-2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  border-left: 5px solid var(--accent-indigo);
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  margin: 0;
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: var(--heading-1);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--heading-2);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: var(--heading-3);
+  font-weight: 600;
+}
+
+h4 {
+  font-size: var(--heading-4);
+  font-weight: 600;
+}
+
+/* Body Text Optimization */
+p {
+  font-family: var(--font-ui), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-3) 0;
+  max-width: 68ch; /* Optimal reading length */
+}
+
+@media (min-width: 768px) {
+  p {
+    font-size: var(--text-lg);
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--accent-indigo) 0%, var(--accent-indigo-light) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.text-center {
+  text-align: center;
+}

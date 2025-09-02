@@ -1,0 +1,41 @@
+/* ===== Main CSS Import File ===== */
+/* This file imports all the separate CSS modules */
+
+/* 1. Base/Foundation */
+@import url('./base.css');
+
+/* 2. Buttons */
+@import url('./buttons.css');
+
+/* 3. Navigation */
+@import url('./navbar.css');
+
+/* 4. Hero/Header */
+@import url('./hero.css');
+
+/* 5. Home Page Specific */
+@import url('./home.css');
+
+/* 6. About Section */
+@import url('./about.css');
+
+/* 7. Projects */
+@import url('./projects.css');
+
+/* 8. Experience */
+@import url('./experience.css');
+
+/* 9. Contact */
+@import url('./contact.css');
+
+/* 10. Tech Stack */
+@import url('./tech-stack.css');
+
+/* 11. Resume */
+@import url('./resume.css');
+
+/* 12. Footer */
+@import url('./footer.css');
+
+/* 13. Responsive */
+@import url('./responsive.css');

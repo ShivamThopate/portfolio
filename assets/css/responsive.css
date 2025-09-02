@@ -1,0 +1,154 @@
+/* ===== Responsive Styles ===== */
+
+/* Responsive Typography Adjustments */
+@media (max-width: 480px) {
+  :root {
+    --heading-1: clamp(2rem, 8vw, 2.5rem);
+    --heading-2: clamp(1.5rem, 6vw, 2rem);
+    --heading-3: clamp(1.25rem, 5vw, 1.5rem);
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --heading-1: clamp(3rem, 5vw, 4.5rem);
+    --heading-2: clamp(2.5rem, 4vw, 3.5rem);
+  }
+}
+
+/* iOS-specific styles and iPhone optimizations */
+@supports (-webkit-touch-callout: none) {
+  /* Larger touch targets for iOS */
+  .social-links a {
+    width: 52px;
+    height: 52px;
+    font-size: 1.4rem;
+  }
+
+  /* Fix for 100vh issue on iOS Safari */
+  .hero {
+    min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  }
+
+  /* Add padding for iPhone notch and safe areas */
+  .container {
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+  }
+
+  /* Fix text rendering on iOS */
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Prevent zoom on input focus */
+  input, textarea, select {
+    font-size: 16px;
+  }
+}
+
+/* iPad and large tablets (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .section-title {
+    font-size: 2.8rem;
+  }
+
+  .btn {
+    padding: 16px 28px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Desktop and large screens */
+@media (min-width: 1025px) {
+  .packages-section .package-card {
+    padding: 40px;
+  }
+  .packages-section .package-card h3 {
+    font-size: 2.2rem;
+  }
+  .packages-section .package-desc {
+    font-size: 1.1rem;
+  }
+  .packages-grid, .packages-featured {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+}
+
+/* Large desktop screens */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  .section-title {
+    font-size: 3.5rem;
+  }
+}
+
+/* Small phones and older iPhones */
+@media (max-width: 576px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .social-links {
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .social-links a {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+  }
+
+  .project-card, .package-card {
+    padding: 25px;
+  }
+
+  .package-card.featured {
+    padding: 30px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Better touch targets */
+  .project-link, .package-link {
+    padding: 8px 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Extra small phones (iPhone SE, etc.) */
+@media (max-width: 414px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .project-card, .package-card {
+    padding: 20px;
+  }
+
+  .social-links a {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Landscape orientation for phones */
+@media (max-width: 844px) and (orientation: landscape) {
+  .section {
+    padding: 50px 0;
+  }
+}

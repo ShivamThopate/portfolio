@@ -219,7 +219,7 @@ class ComponentLoader {
 
   // Set active navigation link based on current page
   setActiveNavLink() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPage = window.location.pathname.split('/').pop() || 'home.html';
     const navLinks = document.querySelectorAll('.nav-links a');
     
     navLinks.forEach(link => {
