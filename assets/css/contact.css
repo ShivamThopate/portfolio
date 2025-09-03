@@ -19,8 +19,8 @@
 
 .contact-info-box:hover,
 .contact-form-box:hover {
-  border: 1px solid #2962ff;
-  box-shadow: 0 0 20px rgba(41, 98, 255, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Headings & Text */
