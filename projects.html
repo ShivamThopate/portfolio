@@ -140,10 +140,11 @@
 
     <!-- Project Navigation Tabs -->
     <div class="project-tabs">
-      <button class="tab-button active" data-tab="github">GITHUB PROJECTS</button>
-      <button class="tab-button" data-tab="huggingface">HUGGING FACE PROJECTS</button>
-      <button class="tab-button" data-tab="streamlit">STREAMLIT PROJECTS</button>
+      <button class="tab-button active" data-tab="github">RECENT PROJECTS</button>
+      <button class="tab-button" data-tab="huggingface">HUGGING FACE</button>
+      <button class="tab-button" data-tab="streamlit">STREAMLIT</button>
       <button class="tab-button" data-tab="pypi">PYPI PACKAGES</button>
+      <button class="tab-button" data-tab="academic">ACADEMIC PROJECTS</button>
     </div>
 
 
@@ -152,7 +153,57 @@
     <div class="tab-content active" id="github-content">
       <h3 class="subsection-title">GitHub Repositories</h3>
       <div class="projects-grid">
-        <!-- Project 1 -->
+        <!-- Project 1 - NEW -->
+        <div class="project-card fade-in" data-tech="python fastapi ai mongodb">
+          <div class="project-content">
+            <div class="project-header">
+              <h3>MyTeacher | AI Education Platform</h3>
+              <span class="project-role">Full-Stack Developer</span>
+            </div>
+            <p class="project-description">AI-powered learning assistant platform for students with flashcards, study plans, visual aids, and document Q&A capabilities</p>
+            <div class="project-tech-stack">
+              <span class="tech-badge">FastAPI</span>
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">MongoDB</span>
+              <span class="tech-badge">React 18</span>
+              <span class="tech-badge">OpenAI API</span>
+            </div>
+            <div class="project-metrics">
+              <span class="metric">Multi-tiered auth system</span>
+              <span class="metric">Real-time chat</span>
+            </div>
+            <div class="project-links">
+              <a href="https://www.loom.com/share/e0294a35981949c88d1940ee0811179b?sid=3d800c7d-7bc4-48ba-bd14-77fec0c49e87" class="btn btn-primary" target="_blank">VIEW WALKTHROUGH</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 - NEW -->
+        <div class="project-card fade-in" data-tech="react fastapi ai rag">
+          <div class="project-content">
+            <div class="project-header">
+              <h3>Base AI Tool Builder</h3>
+              <span class="project-role">Full-Stack Developer</span>
+            </div>
+            <p class="project-description">Multi-purpose GenAI platform combining real-time chat, RAG-based doc intelligence, and scraping with mobile-first UI</p>
+            <div class="project-tech-stack">
+              <span class="tech-badge">FastAPI</span>
+              <span class="tech-badge">MongoDB</span>
+              <span class="tech-badge">React 18</span>
+              <span class="tech-badge">MUI</span>
+              <span class="tech-badge">Tailwind</span>
+            </div>
+            <div class="project-metrics">
+              <span class="metric">RAG-based Q&A</span>
+              <span class="metric">Mobile-first design</span>
+            </div>
+            <div class="project-links">
+              <a href="https://www.loom.com/share/97c1289b70d44d0ab0f0e9249165fa20?sid=990f6af4-2607-4a66-9444-e488fe5fc3ad" class="btn btn-primary" target="_blank">VIEW WALKTHROUGH</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
         <div class="project-card fade-in" data-tech="python api llm">
           <div class="project-content">
             <div class="project-header">
@@ -315,6 +366,84 @@
             <div class="project-metrics">
               <span class="metric">60% time reduction</span>
               <span class="metric">Credibility scoring</span>
+            </div>
+            <div class="project-links">
+            </div>
+          </div>
+        </div>
+
+        <!-- Figma Project -->
+        <div class="project-card fade-in" data-tech="react node ai figma">
+          <div class="project-content">
+            <div class="project-header">
+              <h3>Figma Agents UI Orchestrator</h3>
+              <span class="project-role">Contributor</span>
+            </div>
+            <p class="project-description">AI-powered design-to-code platform transforming Figma designs into production-ready React components with 60% faster delivery</p>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Node.js</span>
+              <span class="tech-badge">React + Vite</span>
+              <span class="tech-badge">Tailwind</span>
+              <span class="tech-badge">OpenAI</span>
+              <span class="tech-badge">Figma API</span>
+            </div>
+            <div class="project-metrics">
+              <span class="metric">60% faster delivery</span>
+              <span class="metric">~100% compatibility</span>
+            </div>
+            <div class="project-links">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Academic Projects -->
+    <div class="tab-content" id="academic-content">
+      <h3 class="subsection-title">Academic Projects</h3>
+      <div class="projects-grid">
+        <!-- Academic Project 1 -->
+        <div class="project-card fade-in" data-tech="python opencv ai computer-vision">
+          <div class="project-content">
+            <div class="project-header">
+              <h3>AI Trainer</h3>
+              <span class="project-role">Research & Development</span>
+            </div>
+            <p class="project-description">Analyzed workout videos for exercise form, giving live corrections with 85% accuracy using computer vision and pose estimation</p>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">OpenCV</span>
+              <span class="tech-badge">MediaPipe</span>
+              <span class="tech-badge">Computer Vision</span>
+              <span class="tech-badge">Pose Detection</span>
+            </div>
+            <div class="project-metrics">
+              <span class="metric">85% accuracy</span>
+              <span class="metric">Live corrections</span>
+            </div>
+            <div class="project-links">
+            </div>
+          </div>
+        </div>
+
+        <!-- Academic Project 2 -->
+        <div class="project-card fade-in" data-tech="python fastapi ai nlp">
+          <div class="project-content">
+            <div class="project-header">
+              <h3>TeachMate</h3>
+              <span class="project-role">Full-Stack Developer</span>
+            </div>
+            <p class="project-description">Built APIs for document parsing, grading, handwriting recognition, and quizzes with auto-scoring capabilities for educational applications</p>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">FastAPI</span>
+              <span class="tech-badge">NLP</span>
+              <span class="tech-badge">OCR</span>
+              <span class="tech-badge">Document Processing</span>
+            </div>
+            <div class="project-metrics">
+              <span class="metric">Auto-grading system</span>
+              <span class="metric">Handwriting recognition</span>
             </div>
             <div class="project-links">
             </div>
