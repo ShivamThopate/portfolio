@@ -17,6 +17,17 @@
   transition: all 0.3s ease;
 }
 
+/* Spacing for standalone cards */
+.contact-info-box {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-form-box {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .contact-info-box:hover,
 .contact-form-box:hover {
   transform: translateY(-5px);
@@ -107,6 +118,31 @@
   background-color: #1f4cd2;
 }
 
+/* Calendly inline embed (shown second) */
+.calendly-embed-wrapper {
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #1e2636;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+}
+
+.calendly-embed-title {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+}
+
+.calendly-inline-widget {
+  width: 100%;
+  min-height: 700px;
+}
+
 /* Responsive Contact Styles */
 @media (max-width: 768px) {
   .contact-info-box,
@@ -134,5 +170,14 @@
   .contact-form .btn {
     padding: 0.8rem 1rem;
     font-size: 0.9rem;
+  }
+
+  .calendly-embed-wrapper {
+    padding: 1rem;
+    margin-top: 0;
+  }
+
+  .calendly-inline-widget {
+    min-height: 600px;
   }
 }

@@ -4,21 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdc79b36-a255-42b9-8937-d02d34607c37" name="Changes" comment="vibe coded task 1">
-      <change beforePath="$PROJECT_DIR$/assets/components.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
+    <list default="true" id="fdc79b36-a255-42b9-8937-d02d34607c37" name="Changes" comment="enhanced image quality">
+      <change afterPath="$PROJECT_DIR$/assets/profile.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/hero.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/hero.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/profile.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/experience.html" beforeDir="false" afterPath="$PROJECT_DIR$/experience.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/navbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/resume.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tech-stack.html" beforeDir="false" afterPath="$PROJECT_DIR$/tech-stack.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_/Users/kethandosapati/Developer/personal_frontend/kethandosapati" value="2y43mBpfIOtcVUbHDpPeYvjP2kZ" />
+    </persistenceIdMap>
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="51" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
     <favorite-branches>
@@ -36,7 +46,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev-001" />
+        <entry key="$PROJECT_DIR$" value="feature/dev-01" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,6 +64,10 @@
     &quot;accountId&quot;: &quot;0ec60980-93e9-41b3-bdd8-40e280f69f1f&quot;
   }
 }</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -68,19 +82,37 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feature/dev-01",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "feature/dev-01-making-minor-changes-sp-jan-15",
+    "javascript.preferred.runtime.type.id": "node",
     "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/Users/kethandosapati/Developer/personal_frontend/kethandosapati/assets",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "ml.llm.LLMThirdPartyAiProvidersConfigurable",
+    "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecapSpentCounter">
+    <option name="endsOfQuotaMs" value="1769860840878" />
+    <option name="spentUsd" value="0.05614275" />
+  </component>
+  <component name="RecapUselessUpdatesCounter">
+    <option name="suspendCountdown" value="7" />
+  </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/components" />
       <recent name="$PROJECT_DIR$" />
@@ -89,7 +121,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-WS-251.27812.50" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.242" />
       </set>
     </attachedChunks>
   </component>
@@ -119,6 +151,21 @@
       <workItem from="1752296187714" duration="11512000" />
       <workItem from="1753815135980" duration="71000" />
       <workItem from="1753815267675" duration="11749000" />
+      <workItem from="1762118699162" duration="401000" />
+      <workItem from="1762119544151" duration="158000" />
+      <workItem from="1762259054588" duration="607000" />
+      <workItem from="1762296910281" duration="3829000" />
+      <workItem from="1762540041401" duration="380000" />
+      <workItem from="1762562491139" duration="24318000" />
+      <workItem from="1762908672155" duration="45000" />
+      <workItem from="1763046317497" duration="599000" />
+      <workItem from="1763664052461" duration="598000" />
+      <workItem from="1764170599803" duration="622000" />
+      <workItem from="1764210660004" duration="183000" />
+      <workItem from="1764554389715" duration="9664000" />
+      <workItem from="1764692161528" duration="124000" />
+      <workItem from="1764692322295" duration="702000" />
+      <workItem from="1768504926826" duration="2746000" />
     </task>
     <task id="LOCAL-00002" summary="ok ok">
       <option name="closed" value="true" />
@@ -320,7 +367,23 @@
       <option name="project" value="LOCAL" />
       <updated>1753829750610</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="changed profile">
+      <option name="closed" value="true" />
+      <created>1761691324092</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1761691324092</updated>
+    </task>
+    <task id="LOCAL-00028" summary="enhanced image quality">
+      <option name="closed" value="true" />
+      <created>1762614604629</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1762614604629</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,6 +421,16 @@
     <MESSAGE value="v1" />
     <MESSAGE value="v2" />
     <MESSAGE value="vibe coded task 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="vibe coded task 1" />
+    <MESSAGE value="changed profile" />
+    <MESSAGE value="enhanced image quality" />
+    <option name="LAST_COMMIT_MESSAGE" value="enhanced image quality" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
   </component>
 </project>
