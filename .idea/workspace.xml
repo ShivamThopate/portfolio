@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdc79b36-a255-42b9-8937-d02d34607c37" name="Changes" comment="enhanced image quality">
-      <change afterPath="$PROJECT_DIR$/assets/profile.jpg" afterDir="false" />
+    <list default="true" id="fdc79b36-a255-42b9-8937-d02d34607c37" name="Changes" comment="Updated favicon links to support multiple formats, added web manifest, and corrected paths for consistency across pages.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/hero.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/hero.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/profile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/experience.html" beforeDir="false" afterPath="$PROJECT_DIR$/experience.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/resume.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tech-stack.html" beforeDir="false" afterPath="$PROJECT_DIR$/tech-stack.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +23,13 @@
     <persistenceIdMap>
       <entry key="_/Users/kethandosapati/Developer/personal_frontend/kethandosapati" value="2y43mBpfIOtcVUbHDpPeYvjP2kZ" />
     </persistenceIdMap>
+  </component>
+  <component name="CopilotUserSelectedModel">
+    <selectedModels>
+      <entry key="edit-panel" value="GPT-5 mini" />
+      <entry key="chat-panel" value="GPT-5 mini" />
+      <entry key="agent-panel" value="GPT-5 mini" />
+    </selectedModels>
   </component>
   <component name="EmbeddingIndexingInfo">
     <option name="cachedIndexableFilesCount" value="51" />
@@ -87,6 +92,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "feature/dev-01-making-minor-changes-sp-jan-15",
@@ -97,17 +103,17 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "ml.llm.LLMThirdPartyAiProvidersConfigurable",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecapSpentCounter">
     <option name="endsOfQuotaMs" value="1769860840878" />
-    <option name="spentUsd" value="0.05614275" />
+    <option name="spentUsd" value="0.0742688" />
   </component>
   <component name="RecapUselessUpdatesCounter">
-    <option name="suspendCountdown" value="7" />
+    <option name="suspendCountdown" value="0" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -121,7 +127,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.242" />
+        <option value="bundled-js-predefined-d6986cc7102b-3bd3a6803838-JavaScript-WS-261.22158.274" />
       </set>
     </attachedChunks>
   </component>
@@ -165,7 +171,28 @@
       <workItem from="1764554389715" duration="9664000" />
       <workItem from="1764692161528" duration="124000" />
       <workItem from="1764692322295" duration="702000" />
-      <workItem from="1768504926826" duration="2746000" />
+      <workItem from="1768504926826" duration="8305000" />
+      <workItem from="1768664168382" duration="39000" />
+      <workItem from="1768664774496" duration="2115000" />
+      <workItem from="1768857921494" duration="230000" />
+      <workItem from="1768858172129" duration="600000" />
+      <workItem from="1769466176133" duration="4358000" />
+      <workItem from="1769653136670" duration="58000" />
+      <workItem from="1769703108211" duration="2440000" />
+      <workItem from="1770491396652" duration="594000" />
+      <workItem from="1770583035941" duration="1795000" />
+      <workItem from="1770951433644" duration="43000" />
+      <workItem from="1770951498070" duration="60000" />
+      <workItem from="1770951693556" duration="6179000" />
+      <workItem from="1771300100049" duration="383000" />
+      <workItem from="1771430783769" duration="55000" />
+      <workItem from="1771430852889" duration="1345000" />
+      <workItem from="1772287816455" duration="1425000" />
+      <workItem from="1772904232784" duration="408000" />
+      <workItem from="1772909208518" duration="41000" />
+      <workItem from="1772909283878" duration="27000" />
+      <workItem from="1772909325280" duration="2265000" />
+      <workItem from="1774539883511" duration="5665000" />
     </task>
     <task id="LOCAL-00002" summary="ok ok">
       <option name="closed" value="true" />
@@ -383,7 +410,55 @@
       <option name="project" value="LOCAL" />
       <updated>1762614604629</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="quick fix ig">
+      <option name="closed" value="true" />
+      <created>1768508010529</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1768508010529</updated>
+    </task>
+    <task id="LOCAL-00030" summary="quick fix ig">
+      <option name="closed" value="true" />
+      <created>1771008050996</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1771008050997</updated>
+    </task>
+    <task id="LOCAL-00031" summary="migrated URLs to /portfolio path">
+      <option name="closed" value="true" />
+      <created>1774540321089</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1774540321089</updated>
+    </task>
+    <task id="LOCAL-00032" summary="added support for multiple favicon formats and deleted unused SVG favicon">
+      <option name="closed" value="true" />
+      <created>1774540941219</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1774540941219</updated>
+    </task>
+    <task id="LOCAL-00033" summary="updated Google site verification codes in index.html and home.html">
+      <option name="closed" value="true" />
+      <created>1774541458323</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1774541458323</updated>
+    </task>
+    <task id="LOCAL-00034" summary="updated meta tags, structured data, and page titles for improved SEO">
+      <option name="closed" value="true" />
+      <created>1774548179295</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1774548179295</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -423,7 +498,13 @@
     <MESSAGE value="vibe coded task 1" />
     <MESSAGE value="changed profile" />
     <MESSAGE value="enhanced image quality" />
-    <option name="LAST_COMMIT_MESSAGE" value="enhanced image quality" />
+    <MESSAGE value="quick fix ig" />
+    <MESSAGE value="migrated URLs to /portfolio path" />
+    <MESSAGE value="added support for multiple favicon formats and deleted unused SVG favicon" />
+    <MESSAGE value="updated Google site verification codes in index.html and home.html" />
+    <MESSAGE value="updated meta tags, structured data, and page titles for improved SEO" />
+    <MESSAGE value="Updated favicon links to support multiple formats, added web manifest, and corrected paths for consistency across pages." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated favicon links to support multiple formats, added web manifest, and corrected paths for consistency across pages." />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
