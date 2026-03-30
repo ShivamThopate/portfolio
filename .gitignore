@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE - IntelliJ / WebStorm
+.idea/
+
+# IDE - VS Code
+.vscode/
+
+# IDE - Kiro
+.kiro/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build output (if added later)
+dist/
+build/
+.cache/
