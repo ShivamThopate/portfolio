@@ -5,7 +5,7 @@ const path = require('path');
 
 // Configuration
 const sitemapPath = './sitemap.xml';
-const baseUrl = 'https://dkethan.github.io/kethandosapati';
+const baseUrl = 'https://dkethan.github.io/portfolio';
 
 // Map of URL paths to HTML files
 const urlFileMap = {
