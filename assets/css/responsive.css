@@ -88,13 +88,21 @@
 
 /* Small phones and older iPhones */
 @media (max-width: 576px) {
+  .packages-featured {
+    grid-template-columns: 1fr;
+  }
+
   .section {
     padding: 60px 0;
   }
 
   .section-title {
     font-size: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .section-subtitle {
+    margin: 0 auto 35px;
   }
 
   .social-links {

@@ -264,10 +264,15 @@
 section#about.about {
   background: linear-gradient(180deg,
     #0f0f1e  0%,
-    #0f0f1e 12%,
-    #1e1f33 50%,
-    #0f0f1e 88%,
-    #0f0f1e 100%
+    #0f101f  8%,
+    #101020  18%,
+    #101121  30%,
+    #111122  45%,
+    #111122  55%,
+    #101121  70%,
+    #101020  82%,
+    #0f101f  92%,
+    #0f0f1e  100%
   );
   isolation: isolate;
 }
@@ -367,12 +372,20 @@ body.stars-move-right .stars-grey-lg { animation: twinkle 4s ease-in-out infinit
   pointer-events: none;
 }
 
-/* Packages: Normal space — matches the hero background */
+/* Packages: Space grey — last section before footer */
 section#packages.packages-section {
-  background:
-    radial-gradient(ellipse at 80% 80%, rgba(99, 102, 241, 0.04) 0%, transparent 40%),
-    radial-gradient(ellipse at 20% 20%, rgba(139, 92, 246, 0.03) 0%, transparent 40%),
-    linear-gradient(180deg, #0f0f1e 0%, #080816 50%, #030308 100%);
+  background: linear-gradient(180deg,
+    #030308  0%,
+    #040409  8%,
+    #05050b  18%,
+    #06060d  30%,
+    #07070f  45%,
+    #07070f  55%,
+    #06060d  70%,
+    #05050b  82%,
+    #040409  92%,
+    #030308  100%
+  );
   isolation: isolate;
   overflow: hidden;
 }
@@ -411,15 +424,12 @@ section#featured-projects.featured-projects-section {
   z-index: 2;
 }
 
-/* Featured Projects: Space grey — starts at packages' #030308 end, wider blend */
+/* Featured Projects: Normal space — after About, matches hero-style background */
 section#featured-projects.featured-projects-section {
-  background: linear-gradient(180deg,
-    #030308  0%,
-    #030308 12%,
-    #161727 50%,
-    #030308 88%,
-    #030308 100%
-  );
+  background:
+    radial-gradient(ellipse at 80% 80%, rgba(99, 102, 241, 0.04) 0%, transparent 40%),
+    radial-gradient(ellipse at 20% 20%, rgba(139, 92, 246, 0.03) 0%, transparent 40%),
+    linear-gradient(180deg, #0f0f1e 0%, #080816 50%, #030308 100%);
   isolation: isolate;
   overflow: hidden;
 }
