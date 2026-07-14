@@ -37,5 +37,8 @@
 /* 12. Footer */
 @import url('./footer.css');
 
-/* 13. Responsive */
+/* 13. Interactions & Micro-animations */
+@import url('./interactions.css');
+
+/* 14. Responsive */
 @import url('./responsive.css');

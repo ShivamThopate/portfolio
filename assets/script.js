@@ -1,6 +1,8 @@
 // Mobile menu toggle (handled by component loader)
 // This functionality is now managed by assets/components.js
 
+// Animation injection removed — now handled by assets/js/interactions.js
+
 // Project tabs functionality
 const tabButtons = document.querySelectorAll('.tab-button');
 const tabContents = document.querySelectorAll('.tab-content');

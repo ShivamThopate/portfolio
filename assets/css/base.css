@@ -1,25 +1,25 @@
 /* ===== Design System Foundation ===== */
 :root {
-  /* Premium Color Palette - Warm Gold + Deep Navy */
-  --primary-charcoal: #1a1a2e;     /* Deep navy primary */
-  --secondary-charcoal: #2d2d3f;   /* Secondary navy */
-  --accent-gold: #d4a574;          /* Primary gold accent */
-  --accent-gold-light: #e8c9a0;    /* Light gold variant */
-  --accent-gold-dark: #b8884e;     /* Dark gold variant */
+  /* Premium Color Palette - Deep Space + Neon Cyan */
+  --primary-charcoal: #0a0a0f;     /* Deep space black */
+  --secondary-charcoal: #12121a;   /* Secondary space */
+  --accent-gold: #00f0ff;          /* Primary cyan accent (keeping variable name for compatibility) */
+  --accent-gold-light: #80f8ff;    /* Light cyan variant */
+  --accent-gold-dark: #009099;     /* Dark cyan variant */
   --accent-indigo: #6366f1;        /* Secondary indigo accent */
   --accent-indigo-light: #818cf8;  /* Light indigo variant */
   --accent-indigo-dark: #4f46e5;   /* Dark indigo variant */
 
   /* Text Colors */
-  --text-primary: #f5f3ff;         /* Warm off-white text */
-  --text-secondary: #e2dff0;       /* Secondary warm text */
-  --text-muted: #a5a3b8;          /* Muted purple-gray text */
-  --text-light: #c4c1d4;          /* Light warm gray text */
+  --text-primary: #ffffff;         /* Pure white text */
+  --text-secondary: #e2e8f0;       /* Slate secondary text */
+  --text-muted: #94a3b8;          /* Slate muted text */
+  --text-light: #cbd5e1;          /* Slate light text */
 
   /* Background Colors */
-  --bg-primary: #0f0f1e;          /* Deep navy background */
-  --bg-secondary: #1a1a2e;        /* Section background */
-  --bg-card: #1e1e35;             /* Card background */
+  --bg-primary: #050508;          /* Absolute dark background */
+  --bg-secondary: #0a0a0f;        /* Section background */
+  --bg-card: #0f0f16;             /* Card background */
 
   /* Supporting Colors */
   --success: #10b981;             /* Success green */
