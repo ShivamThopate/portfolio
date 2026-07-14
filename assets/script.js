@@ -61,28 +61,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 
-// Animation on scroll
-const animateOnScroll = () => {
-  const elements = document.querySelectorAll('.fade-in, .slide-in');
-
-  elements.forEach(element => {
-    const elementPosition = element.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.3;
-
-    if (elementPosition < screenPosition) {
-      element.classList.add('animate');
-    }
-  });
-};
-
-// Scroll to top button functionality (handled by component loader)
-// This functionality is now managed by assets/components.js
-
-// Update copyright year in footer (handled by component loader)
-// This functionality is now managed by assets/components.js
-
-window.addEventListener('scroll', animateOnScroll);
-window.addEventListener('load', animateOnScroll);
+// Scroll reveal animations are now handled via IntersectionObserver in interactions.js
 
 // Star drift direction: even days = left-to-right, odd days = right-to-left
 (function setStarDirection() {

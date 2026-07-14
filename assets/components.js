@@ -58,17 +58,24 @@ class ComponentLoader {
       });
     }
 
-    // Navbar scroll effect with professional timing
+    // Navbar scroll effect with professional timing (debounced for performance)
+    let navTicking = false;
     window.addEventListener('scroll', () => {
-      const navbar = document.querySelector('.navbar');
-      if (navbar) {
-        if (window.scrollY > 50) {
-          navbar.classList.add('scrolled');
-        } else {
-          navbar.classList.remove('scrolled');
-        }
+      if (!navTicking) {
+        window.requestAnimationFrame(() => {
+          const navbar = document.querySelector('.navbar');
+          if (navbar) {
+            if (window.scrollY > 50) {
+              navbar.classList.add('scrolled');
+            } else {
+              navbar.classList.remove('scrolled');
+            }
+          }
+          navTicking = false;
+        });
+        navTicking = true;
       }
-    });
+    }, { passive: true });
 
     // Set active navigation link based on current page
     this.setActiveNavLink();
@@ -192,14 +199,21 @@ class ComponentLoader {
     // Scroll to top button functionality
     const scrollToTopButton = document.getElementById('scroll-to-top');
     if (scrollToTopButton) {
-      // Show/hide button based on scroll position
+      // Show/hide button based on scroll position (debounced for performance)
+      let btnTicking = false;
       window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-          scrollToTopButton.classList.add('visible');
-        } else {
-          scrollToTopButton.classList.remove('visible');
+        if (!btnTicking) {
+          window.requestAnimationFrame(() => {
+            if (window.scrollY > 300) {
+              scrollToTopButton.classList.add('visible');
+            } else {
+              scrollToTopButton.classList.remove('visible');
+            }
+            btnTicking = false;
+          });
+          btnTicking = true;
         }
-      });
+      }, { passive: true });
 
       // Scroll to top when button is clicked
       scrollToTopButton.addEventListener('click', () => {
