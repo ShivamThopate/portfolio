@@ -316,8 +316,8 @@
 .resume-header-text {
   text-align: center;
   border-bottom: 1px solid var(--border-light);
-  padding-bottom: 20px;
-  margin-bottom: 30px;
+  padding-bottom: 25px;
+  margin-bottom: 45px;
 }
 
 .resume-header-text h3 {
@@ -335,7 +335,7 @@
 }
 
 .resume-section-text {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .resume-section-text h4 {
@@ -355,7 +355,7 @@
 }
 
 .resume-item-text {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .resume-item-text h5 {
