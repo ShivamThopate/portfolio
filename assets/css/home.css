@@ -56,7 +56,7 @@
   border: none;
   border-radius: 12px;
   padding: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform, opacity, background-color, border-color, box-shadow, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-category:hover {
@@ -90,7 +90,7 @@
   font-size: 0.9rem;
   font-weight: 500;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
+  transition: transform, opacity, background-color, border-color, box-shadow, color 0.3s ease;
 }
 
 .skill-tag:hover {

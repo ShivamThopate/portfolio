@@ -276,7 +276,7 @@
 .tilt-card {
   transform-style: preserve-3d;
   will-change: transform;
-  transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+  transition: transform, opacity, background-color, border-color, box-shadow, color 0.15s ease-out, box-shadow 0.3s ease;
 }
 
 /* 6b. Glow border on hover */
@@ -319,7 +319,7 @@
   transform: translateY(-100%);
 }
 .navbar {
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+  transition: transform, opacity, background-color, border-color, box-shadow, color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
               background 0.18s ease,
               padding 0.18s ease;
 }
@@ -366,7 +366,7 @@
   color: var(--text-muted, #94a3b8);
   font-size: 0.95rem;
   pointer-events: none;
-  transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform, opacity, background-color, border-color, box-shadow, color 0.25s cubic-bezier(0.23, 1, 0.32, 1);
   background: transparent;
   padding: 0 4px;
 }
@@ -400,7 +400,7 @@
 /* Social icon hover */
 .social-links a,
 .contact-socials a {
-  transition: transform 0.3s ease, color 0.3s ease, background 0.3s ease;
+  transition: transform, opacity, background-color, border-color, box-shadow, color 0.3s ease, color 0.3s ease, background 0.3s ease;
 }
 .social-links a:hover,
 .contact-socials a:hover {
@@ -437,7 +437,7 @@
   z-index: 9998;
   transform: translateY(20px);
   opacity: 0;
-  transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.35s ease;
+  transition: transform, opacity, background-color, border-color, box-shadow, color 0.35s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.35s ease;
   pointer-events: none;
 }
 .toast.toast-visible {
@@ -460,4 +460,15 @@
 }
 .section-title.revealed {
   background-position: 0 0;
+}
+
+
+/* ───────────────────────────────────────────
+   10. Performance Optimizations
+   ─────────────────────────────────────────── */
+.project-card, .tech-card, .skill-category, .package-card {
+  will-change: transform;
+}
+body.animations-paused *, body.hero-paused .hero *, body.hero-paused .home-hero *, body.hero-paused .stars-small, body.hero-paused .stars-medium, body.hero-paused .stars-large, body.hero-paused .solar-glow {
+  animation-play-state: paused !important;
 }

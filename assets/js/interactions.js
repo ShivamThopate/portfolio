@@ -485,6 +485,33 @@
     }
   }
 
+  // Performance Pauser (Pauses heavy CSS animations when off-screen or tab hidden)
+  function initPerformancePauser() {
+    // 1. Page Visibility API
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            document.body.classList.add('animations-paused');
+        } else {
+            document.body.classList.remove('animations-paused');
+        }
+    });
+
+    // 2. Pause hero stars when scrolled past hero
+    const hero = document.querySelector('.hero, .home-hero');
+    if (hero && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    document.body.classList.add('hero-paused');
+                } else {
+                    document.body.classList.remove('hero-paused');
+                }
+            });
+        }, { rootMargin: '100px' });
+        observer.observe(hero);
+    }
+  }
+
   // ═══════════════════════════════════════════
   // BOOT
   // ═══════════════════════════════════════════
@@ -495,6 +522,9 @@
   document.addEventListener('DOMContentLoaded', () => {
     // Auto-add reveal classes to existing elements
     autoAddRevealClasses();
+
+    // Performance Optimization
+    initPerformancePauser();
 
     // Always-on systems
     initScrollReveal();

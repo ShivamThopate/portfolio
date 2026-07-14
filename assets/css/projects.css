@@ -20,7 +20,7 @@
   font-weight: 600;
   padding: 12px 24px;
   position: relative;
-  transition: all 0.3s ease;
+  transition: transform, opacity, background-color, border-color, box-shadow, color 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -169,12 +169,12 @@
   background: rgba(15, 15, 30, 0.7);
   border-radius: 16px;
   padding: 35px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, transform 0.3s ease;
+  transition: transform, opacity, background-color, border-color, box-shadow, color 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, transform 0.3s ease;
   border: none;
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   width: 100% !important;
   max-width: 100% !important;
@@ -235,7 +235,7 @@
   background: var(--dark-light);
   border-radius: 8px;
   padding: 30px;
-  transition: all 0.3s ease;
+  transition: transform, opacity, background-color, border-color, box-shadow, color 0.3s ease;
   border: none;
   position: relative;
   overflow: hidden;
@@ -363,7 +363,7 @@
   cursor: pointer;
   padding: 5px;
   border-radius: 4px;
-  transition: all 0.2s ease;
+  transition: transform, opacity, background-color, border-color, box-shadow, color 0.2s ease;
 }
 
 .copy-btn:hover {
@@ -383,7 +383,7 @@
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  transition: all 0.3s ease;
+  transition: transform, opacity, background-color, border-color, box-shadow, color 0.3s ease;
 }
 
 .package-link:hover, .package-link:active {
@@ -393,7 +393,7 @@
 .package-link::after {
   content: '→';
   margin-left: 5px;
-  transition: all 0.3s ease;
+  transition: transform, opacity, background-color, border-color, box-shadow, color 0.3s ease;
 }
 
 .package-link:hover::after, .package-link:active::after {
@@ -406,7 +406,7 @@
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  transition: all 0.3s ease;
+  transition: transform, opacity, background-color, border-color, box-shadow, color 0.3s ease;
 }
 
 .package-link-secondary:hover, .package-link-secondary:active {
@@ -482,7 +482,7 @@
   font-size: var(--text-xs);
   font-weight: 500;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all var(--duration-fast) var(--ease-professional);
+  transition: transform, opacity, background-color, border-color, box-shadow, color var(--duration-fast) var(--ease-professional);
 }
 
 .tech-badge:hover {
@@ -522,7 +522,7 @@
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  transition: all 0.3s ease;
+  transition: transform, opacity, background-color, border-color, box-shadow, color 0.3s ease;
 }
 
 .project-link:hover, .project-link:active {
@@ -532,7 +532,7 @@
 .project-link::after {
   content: '→';
   margin-left: 5px;
-  transition: all 0.3s ease;
+  transition: transform, opacity, background-color, border-color, box-shadow, color 0.3s ease;
 }
 
 .project-link:hover::after, .project-link:active::after {

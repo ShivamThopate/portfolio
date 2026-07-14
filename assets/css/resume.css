@@ -192,7 +192,7 @@
   min-height: 44px;
   justify-content: center;
   border-radius: 12px;
-  transition: all var(--duration-fast) var(--ease-professional);
+  transition: transform, opacity, background-color, border-color, box-shadow, color var(--duration-fast) var(--ease-professional);
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
   position: relative;
@@ -257,7 +257,7 @@
     gap: var(--space-2);
     font-weight: 600;
     letter-spacing: 0.5px;
-    transition: all var(--duration-fast) var(--ease-professional);
+    transition: transform, opacity, background-color, border-color, box-shadow, color var(--duration-fast) var(--ease-professional);
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
   }

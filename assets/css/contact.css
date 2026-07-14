@@ -14,7 +14,7 @@
   border-radius: 16px;
   border: none;
   box-shadow: 0 0 0 transparent;
-  transition: all 0.3s ease;
+  transition: transform, opacity, background-color, border-color, box-shadow, color 0.3s ease;
 }
 
 /* Spacing for standalone cards */
@@ -74,7 +74,7 @@
   border-radius: 50%;
   margin-right: 10px;
   font-size: 1rem;
-  transition: all 0.3s ease;
+  transition: transform, opacity, background-color, border-color, box-shadow, color 0.3s ease;
 }
 
 .contact-socials a:hover {

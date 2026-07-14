@@ -9,7 +9,7 @@
   font-weight: 600;
   font-size: var(--text-sm);
   text-align: center;
-  transition: all var(--duration-normal) var(--ease-professional);
+  transition: transform, opacity, background-color, border-color, box-shadow, color var(--duration-normal) var(--ease-professional);
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -19,8 +19,8 @@
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   min-height: 48px;
 }
 
@@ -42,7 +42,7 @@
   bottom: 0;
   background: rgba(255, 255, 255, 0.08);
   opacity: 0;
-  transition: all var(--duration-normal) var(--ease-professional);
+  transition: transform, opacity, background-color, border-color, box-shadow, color var(--duration-normal) var(--ease-professional);
   z-index: -1;
   border-radius: 12px;
 }
