@@ -144,3 +144,53 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     scheduleNext();
   }, 6000 + Math.random() * 6000);
 })();
+
+// Contact form AJAX submission
+document.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      submitBtn.disabled = true;
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: contactForm.method,
+          body: new FormData(contactForm),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        if (response.ok) {
+          if (window.showToast) {
+            window.showToast('Message sent successfully!', 'fa-paper-plane');
+          } else {
+            alert('Message sent successfully!');
+          }
+          contactForm.reset();
+        } else {
+          const data = await response.json();
+          if (Object.hasOwn(data, 'errors')) {
+            const errors = data.errors.map(err => err.message).join(', ');
+            if (window.showToast) window.showToast(errors, 'fa-exclamation-circle');
+            else alert(errors);
+          } else {
+            if (window.showToast) window.showToast('Oops! There was a problem submitting your form', 'fa-exclamation-circle');
+            else alert('Oops! There was a problem submitting your form');
+          }
+        }
+      } catch (error) {
+        if (window.showToast) window.showToast('Oops! There was a problem submitting your form', 'fa-exclamation-circle');
+        else alert('Oops! There was a problem submitting your form');
+      } finally {
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
+      }
+    });
+  }
+});
