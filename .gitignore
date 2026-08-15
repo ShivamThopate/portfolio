@@ -25,4 +25,4 @@ build/
 .cache/
 
 # pycharm env
-.idea
+.idea__pycache__/

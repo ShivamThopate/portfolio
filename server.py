@@ -65,7 +65,7 @@ class CleanURLHandler(http.server.SimpleHTTPRequestHandler):
 
 def run_server(port=8000):
     """Run the server on the specified port"""
-    with socketserver.TCPServer(("", port), CleanURLHandler) as httpd:
+    with http.server.ThreadingHTTPServer(("", port), CleanURLHandler) as httpd:
         print(f"🚀 Server running on http://localhost:{port}")
         print(f"📁 Clean URLs supported:")
         print(f"   • /home → home.html")
@@ -84,4 +84,4 @@ def run_server(port=8000):
             print("\n🛑 Server stopped")
 
 if __name__ == "__main__":
-    run_server(10000)
+    run_server(3000)

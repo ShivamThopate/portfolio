@@ -1,3 +1,472 @@
+/* --- assets/components.js --- */
+// Component Loader for Navbar and Footer
+class ComponentLoader {
+  constructor() {
+    this.components = {};
+  }
+
+  // Load a component from an HTML file
+  async loadComponent(name, selector) {
+    try {
+      const response = await fetch(`${name}.html`);
+      if (!response.ok) {
+        console.error(`Error loading component ${name}: Failed to load ${name}.html`);
+        return;
+      }
+      const html = await response.text();
+      this.components[name] = html;
+      
+      // Insert the component into the specified selector
+      const targetElement = document.querySelector(selector);
+      if (targetElement) {
+        targetElement.innerHTML = html;
+        
+        // Re-initialize any scripts that need to run after component insertion
+        this.initializeComponentScripts(name);
+      }
+    } catch (error) {
+      console.error(`Error loading component ${name}:`, error);
+    }
+  }
+
+  // Initialize scripts for specific components
+  initializeComponentScripts(componentName) {
+    if (componentName === 'navbar') {
+      this.initializeNavbarScripts();
+    } else if (componentName === 'footer') {
+      this.initializeFooterScripts();
+    }
+  }
+
+  // Initialize navbar-specific scripts
+  initializeNavbarScripts() {
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+          menuToggle.classList.remove('active');
+        });
+      });
+    }
+
+    // Navbar scroll effect with professional timing (debounced for performance)
+    let navTicking = false;
+    window.addEventListener('scroll', () => {
+      if (!navTicking) {
+        window.requestAnimationFrame(() => {
+          const navbar = document.querySelector('.navbar');
+          if (navbar) {
+            if (window.scrollY > 50) {
+              navbar.classList.add('scrolled');
+            } else {
+              navbar.classList.remove('scrolled');
+            }
+          }
+          navTicking = false;
+        });
+        navTicking = true;
+      }
+    }, { passive: true });
+
+    // Set active navigation link based on current page
+    this.setActiveNavLink();
+    
+    // Initialize section highlighting for single-page navigation
+    this.initializeSectionHighlighting();
+    
+    // Initialize keyboard navigation
+    this.initializeKeyboardNavigation();
+  }
+
+  // Initialize section highlighting with Intersection Observer
+  initializeSectionHighlighting() {
+    const sections = document.querySelectorAll('section[id], .section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    
+    if (sections.length === 0 || navLinks.length === 0) return;
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.id;
+          this.updateActiveSection(sectionId);
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => {
+      sectionObserver.observe(section);
+    });
+  }
+
+  // Update active section highlighting
+  updateActiveSection(activeSectionId) {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      
+      // Remove active class from all section links
+      if (href && href.startsWith('#')) {
+        link.classList.remove('active');
+      }
+      
+      // Add active class to matching section link
+      if (href === `#${activeSectionId}`) {
+        // Use setTimeout to ensure smooth transition timing
+        setTimeout(() => {
+          link.classList.add('active');
+        }, 50);
+      }
+    });
+  }
+
+  // Initialize keyboard navigation support
+  initializeKeyboardNavigation() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const logo = document.querySelector('.logo');
+    const menuToggle = document.getElementById('mobile-menu');
+    
+    // Make all navigation elements keyboard accessible
+    const focusableElements = [logo, ...navLinks, menuToggle].filter(Boolean);
+    
+    focusableElements.forEach((element, index) => {
+      // Ensure elements are tabbable
+      if (!element.hasAttribute('tabindex')) {
+        element.setAttribute('tabindex', '0');
+      }
+      
+      // Add keyboard event listeners
+      element.addEventListener('keydown', (e) => {
+        switch (e.key) {
+          case 'Enter':
+          case ' ':
+            e.preventDefault();
+            element.click();
+            break;
+          case 'ArrowRight':
+          case 'ArrowDown':
+            e.preventDefault();
+            this.focusNextElement(focusableElements, index);
+            break;
+          case 'ArrowLeft':
+          case 'ArrowUp':
+            e.preventDefault();
+            this.focusPreviousElement(focusableElements, index);
+            break;
+          case 'Home':
+            e.preventDefault();
+            focusableElements[0].focus();
+            break;
+          case 'End':
+            e.preventDefault();
+            focusableElements[focusableElements.length - 1].focus();
+            break;
+        }
+      });
+    });
+  }
+
+  // Focus next element in navigation
+  focusNextElement(elements, currentIndex) {
+    const nextIndex = (currentIndex + 1) % elements.length;
+    elements[nextIndex].focus();
+  }
+
+  // Focus previous element in navigation
+  focusPreviousElement(elements, currentIndex) {
+    const prevIndex = currentIndex === 0 ? elements.length - 1 : currentIndex - 1;
+    elements[prevIndex].focus();
+  }
+
+  // Initialize footer-specific scripts
+  initializeFooterScripts() {
+    // Scroll to top button functionality
+    const scrollToTopButton = document.getElementById('scroll-to-top');
+    if (scrollToTopButton) {
+      // Show/hide button based on scroll position (debounced for performance)
+      let btnTicking = false;
+      window.addEventListener('scroll', () => {
+        if (!btnTicking) {
+          window.requestAnimationFrame(() => {
+            if (window.scrollY > 300) {
+              scrollToTopButton.classList.add('visible');
+            } else {
+              scrollToTopButton.classList.remove('visible');
+            }
+            btnTicking = false;
+          });
+          btnTicking = true;
+        }
+      }, { passive: true });
+
+      // Scroll to top when button is clicked
+      scrollToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    // Update copyright year in footer
+    const copyrightYearElement = document.getElementById('copyright-year');
+    if (copyrightYearElement) {
+      copyrightYearElement.textContent = new Date().getFullYear();
+    }
+  }
+
+  // Set active navigation link based on current page
+  setActiveNavLink() {
+    const currentPage = window.location.pathname.split('/').pop() || 'home.html';
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      
+      // Only remove active class from page links, not section links
+      if (href && !href.startsWith('#')) {
+        link.classList.remove('active');
+        
+        // Add active class to current page
+        if (href === currentPage) {
+          link.classList.add('active');
+        }
+      }
+    });
+  }
+
+  // Load all components
+  async loadAllComponents() {
+    await Promise.all([
+      this.loadComponent('navbar', '#navbar-placeholder'),
+      this.loadComponent('footer', '#footer-placeholder')
+    ]);
+  }
+}
+
+// Initialize component loader when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  const loader = new ComponentLoader();
+  loader.loadAllComponents();
+}); 
+
+/* --- assets/script.js --- */
+// Mobile menu toggle (handled by component loader)
+// This functionality is now managed by assets/components.js
+
+// Animation injection removed — now handled by assets/js/interactions.js
+
+// Project tabs functionality
+const tabButtons = document.querySelectorAll('.tab-button');
+const tabContents = document.querySelectorAll('.tab-content');
+
+if (tabButtons.length > 0) {
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove active class from all buttons and contents
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      tabContents.forEach(content => content.classList.remove('active'));
+
+      // Add active class to clicked button
+      button.classList.add('active');
+
+      // Show corresponding content
+      const tabId = button.getAttribute('data-tab');
+      document.getElementById(`${tabId}-content`).classList.add('active');
+    });
+  });
+}
+
+// Clipboard functionality for package installation commands
+const copyButtons = document.querySelectorAll('.copy-btn');
+if (copyButtons.length > 0) {
+  copyButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const textToCopy = button.getAttribute('data-clipboard-text');
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        // Show copied feedback
+        const originalHTML = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-check"></i>';
+        button.style.color = 'var(--success)';
+
+        // Reset after 2 seconds
+        setTimeout(() => {
+          button.innerHTML = originalHTML;
+          button.style.color = '';
+        }, 2000);
+      });
+    });
+  });
+}
+
+// Navbar scroll effect (handled by component loader)
+// This functionality is now managed by assets/components.js
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
+
+
+// Scroll reveal animations are now handled via IntersectionObserver in interactions.js
+
+// Star drift direction: even days = left-to-right, odd days = right-to-left
+(function setStarDirection() {
+  if (new Date().getDate() % 2 === 0) {
+    document.body.classList.add('stars-move-right');
+  }
+})();
+
+// Comet system — fires every 1–3 minutes, sometimes 2 at once
+(function initCometSystem() {
+  const layer = document.getElementById('comet-layer');
+  if (!layer) return;
+
+  function spawnComet() {
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    const diagLen = Math.sqrt(vw * vw + vh * vh);
+
+    // Spawn from a random edge: 0=top, 1=right, 2=bottom, 3=left
+    const edge = Math.floor(Math.random() * 4);
+    let startX, startY, angleDeg;
+
+    if (edge === 0) {
+      // Top edge — travel diagonally downward
+      startX = Math.random() * vw;
+      startY = 0;
+      angleDeg = 60 + Math.random() * 60;   // 60–120° (mostly downward)
+    } else if (edge === 1) {
+      // Right edge — travel diagonally leftward
+      startX = vw;
+      startY = Math.random() * vh;
+      angleDeg = 150 + Math.random() * 60;  // 150–210° (mostly leftward)
+    } else if (edge === 2) {
+      // Bottom edge — travel diagonally upward
+      startX = Math.random() * vw;
+      startY = vh;
+      angleDeg = 240 + Math.random() * 60;  // 240–300° (mostly upward)
+    } else {
+      // Left edge — travel diagonally rightward
+      startX = 0;
+      startY = Math.random() * vh;
+      angleDeg = 330 + Math.random() * 60;  // 330–390°→30° (mostly rightward)
+    }
+
+    const travelDist = diagLen * (0.5 + Math.random() * 0.4);
+    const duration = 1.2 + Math.random() * 1.4;
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'comet-wrapper';
+    wrapper.style.left = startX + 'px';
+    wrapper.style.top = startY + 'px';
+    wrapper.style.transform = 'rotate(' + angleDeg + 'deg)';
+
+    const comet = document.createElement('div');
+    comet.className = 'comet';
+    comet.style.setProperty('--comet-travel', travelDist + 'px');
+    comet.style.setProperty('--comet-duration', duration + 's');
+
+    wrapper.appendChild(comet);
+    layer.appendChild(wrapper);
+    comet.addEventListener('animationend', function() { wrapper.remove(); });
+  }
+
+  function scheduleNext() {
+    // 1 to 3 minutes
+    const delay = 60000 + Math.random() * 120000;
+    setTimeout(function() {
+      spawnComet();
+      // 35% chance: fire a second comet 0.6–2s later
+      if (Math.random() < 0.35) {
+        setTimeout(spawnComet, 600 + Math.random() * 1400);
+      }
+      scheduleNext();
+    }, delay);
+  }
+
+  // First comet after 6–12 seconds so the page has settled
+  setTimeout(function() {
+    spawnComet();
+    scheduleNext();
+  }, 6000 + Math.random() * 6000);
+})();
+
+// Contact form AJAX submission
+document.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      submitBtn.disabled = true;
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: contactForm.method,
+          body: new FormData(contactForm),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        if (response.ok) {
+          if (window.showToast) {
+            window.showToast('Message sent successfully!', 'fa-paper-plane');
+          } else {
+            alert('Message sent successfully!');
+          }
+          contactForm.reset();
+        } else {
+          const data = await response.json();
+          if (Object.hasOwn(data, 'errors')) {
+            const errors = data.errors.map(err => err.message).join(', ');
+            if (window.showToast) window.showToast(errors, 'fa-exclamation-circle');
+            else alert(errors);
+          } else {
+            if (window.showToast) window.showToast('Oops! There was a problem submitting your form', 'fa-exclamation-circle');
+            else alert('Oops! There was a problem submitting your form');
+          }
+        }
+      } catch (error) {
+        if (window.showToast) window.showToast('Oops! There was a problem submitting your form', 'fa-exclamation-circle');
+        else alert('Oops! There was a problem submitting your form');
+      } finally {
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
+      }
+    });
+  }
+});
+
+
+/* --- assets/js/interactions.js --- */
 /**
  * Portfolio Premium Interactions — interactions.js
  * Pure vanilla JS. Zero dependencies. ~450 lines.
@@ -544,8 +1013,8 @@
 
     // Desktop-only systems (skip on touch / reduced-motion)
     if (isDesktop && !prefersReducedMotion) {
-      initCustomCursor();
-      initHeroMouseGlow();
+      // initCustomCursor();
+      // initHeroMouseGlow();
       initMagneticButtons();
       initCardTilt();
       initHeroTypingEffect();
@@ -559,3 +1028,4 @@
   window.showToast = showToast;
 
 })();
+

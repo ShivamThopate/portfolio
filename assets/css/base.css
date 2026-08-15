@@ -441,3 +441,28 @@ p {
 .text-center {
   text-align: center;
 }
+
+/* --- Performance placeholders --- */
+/* Reserve space for dynamic components to prevent layout shift */
+#navbar-placeholder {
+  min-height: 70px; /* Adjust to match your navbar's actual height */
+  width: 100%;
+}
+
+#footer-placeholder {
+  min-height: 250px; /* Adjust to match your footer's actual height */
+  width: 100%;
+}
+
+/* Optional: Add a subtle skeleton loading animation */
+#navbar-placeholder:empty, 
+#footer-placeholder:empty {
+  background: linear-gradient(90deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+  background-size: 200% 100%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
